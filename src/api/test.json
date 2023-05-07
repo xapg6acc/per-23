@@ -1,0 +1,40 @@
+{
+  "dark": {
+    "mode": "dark",
+    "primary": {
+      "main": "rgba(121, 134, 203, 0.7)",
+      "light": "rgba(147, 158, 213, 0.7)",
+      "dark": "rgba(84, 93, 142, 0.7)",
+      "contrastText": "#fff"
+    },
+    "secondary": {
+      "main": "rgba(94, 53, 177, 0.7)",
+      "contrastText": "rgba(69, 39, 160, 0.7)",
+      "light": "rgba(126, 93, 192, 0.7)",
+      "dark": "rgba(65, 37, 123, 0.7)"
+    },
+    "background": {
+      "default": "rgba(9, 42, 87, 1)",
+      "paper": "rgba(9, 42, 87, 0.7)"
+    }
+  },
+  "light": {
+    "mode": "light",
+    "primary": {
+      "main": "rgba(149, 117, 205, 0.7)",
+      "light": "rgba(170, 144, 215, 0.7)",
+      "dark": "rgba(104, 81, 143, 0.7)",
+      "contrastText": "#fff"
+    },
+    "secondary": {
+      "main": "rgba(57, 73, 171, 1)",
+      "contrastText": "rgba(40, 53, 147, 0.7)",
+      "light": "rgba(96, 109, 187, 1)",
+      "dark": "rgba(39, 51, 119, 1)"
+    },
+    "background": {
+      "default": "rgba(255, 15, NaN, 0.1)",
+      "paper": "rgba(232, 234, 246, 0.7)"
+    }
+  }
+}

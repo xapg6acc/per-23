@@ -1,0 +1,42 @@
+{
+  "subjects": [
+    {
+      "subjectID": 1,
+      "subjectName": "Mathematics",
+      "teachers": [
+        {
+          "teacherID": 1,
+          "teacherName": "John Smith"
+        },
+        {
+          "teacherID": 2,
+          "teacherName": "Jane Doe"
+        },
+        {
+          "teacherID": 5,
+          "teacherName": "Bob Brown"
+        }
+      ]
+    },
+    {
+      "subjectID": 2,
+      "subjectName": "English",
+      "teachers": [
+        {
+          "teacherID": 3,
+          "teacherName": "Tom Lee"
+        }
+      ]
+    },
+    {
+      "subjectID": 3,
+      "subjectName": "Science",
+      "teachers": [
+        {
+          "teacherID": 4,
+          "teacherName": "Sarah Kim"
+        }
+      ]
+    }
+  ]
+}
