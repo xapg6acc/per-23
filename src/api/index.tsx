@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import axios, { AxiosRequestConfig } from 'axios';
-import {QueryClient, QueryOptions} from '@tanstack/react-query';
+import { QueryClient, QueryOptions } from '@tanstack/react-query';
 import { ApiError } from 'next/dist/server/api-utils';
 import { useQuery, UseQueryOptions } from '@tanstack/react-query';
 import { QueryClientProvider } from '@tanstack/react-query';
@@ -12,6 +12,12 @@ import teachers from './teacher.json';
 // Object.entries(teachers).map((key, value) => {
 //   console.log(key)
 // })
+
+// export const appConfig = {
+//   reddit: {
+//     api: process.env.REDDIT_API || '',
+//   },
+// };
 
 export const queryClient = {
   defaultOptions: {
@@ -91,17 +97,17 @@ client.interceptors.response.use(response => {
   return response;
 });
 
-export const getTest = async (options: AxiosRequestConfig = {}): Promise<any> => {
-  const result = await client.get(process.env.POSTGRES_HOST as string, options);
+// export const getTest = async (options: AxiosRequestConfig = {}): Promise<any> => {
+//   const result = await client.get(process.env.REDDIT_API + '/me', options);
+//
+//   console.log('result', process.env.REDDIT_API, result);
+//
+//   return result;
+// };
 
-  console.log('result', result);
-
-  return result;
-};
-
-export const useGetTest = (options: QueryOptions<any, any> = {}) => {
-  return useQuery<any, any>(['test'], getTest, options);
-};
+// export const useGetTest = (options: QueryOptions<any, any> = {}) => {
+//   return useQuery<any, any>(['test'], getTest, options);
+// };
 
 // export const testTheme = async (options: AxiosRequestConfig = {}) => {
 //   return await axios.get(teachers, options);

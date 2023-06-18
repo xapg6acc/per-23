@@ -1,12 +1,15 @@
 import Head from 'next/head';
-import {useEffect, useState} from 'react';
-import {Grid} from '@mui/material';
+import { Grid } from '@mui/material';
+import { useEffect, useState } from 'react';
+import { GetStaticProps, NextPage } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import {Paper} from '@app/skeleton';
-import {Level} from '@app/constants/level';
+import prisma from '@lib/prisma';
+import { Paper } from '@app/skeleton';
+import { Level } from '@app/constants/level';
 import image from '@app/images/wallhaven-l83o92.jpeg';
 
-export default function Home() {
+const Home: NextPage = () => {
   const [loading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -38,4 +41,23 @@ export default function Home() {
       </main>
     </>
   );
-}
+};
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  // const feed = await prisma.post.findMany({
+  //   where: { published: true },
+  //   // include: {
+  //   //   author: {
+  //   //     select: { name: true },
+  //   //   },
+  //   // },
+  // });
+
+  // console.log('feed', feed);
+
+  return {
+    props: { ...(await serverSideTranslations('uk')) },
+  };
+};
+
+export default Home;

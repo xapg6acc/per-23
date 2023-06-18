@@ -76,6 +76,22 @@ export const theme = createTheme({
         },
       },
     },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          width: '100%',
+        },
+      },
+    },
+    // MuiFormLabel: {
+    //   styleOverrides: {
+    //     root: {
+    //       // width: 1,
+    //       backgroundColor: 'white',
+    //       borderRadius: 5,
+    //     },
+    //   },
+    // },  sx={{ '.MuiTextField-root': { width: 1 } }}
   },
 });
 

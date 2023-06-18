@@ -1,0 +1,6 @@
+{
+  "email": {
+    "400": "There is a unique constraint violation, a new user cannot be created with this email",
+    "409": "Email is already exists."
+  }
+}

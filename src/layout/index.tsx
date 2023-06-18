@@ -1,29 +1,24 @@
-import { ReactNode, useEffect, useState, useMemo } from 'react';
-import {
-  AppBar,
-  Box,
-  Grow,
-  IconButton,
-  MenuItem,
-  MenuList,
-  MenuItemProps,
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Skeleton,
-} from '@mui/material';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
+import { ReactNode, useEffect, useState, useMemo, useRef } from 'react';
+import { AppBar, Box, IconButton, MenuItem, MenuList, MenuItemProps, Tooltip, Skeleton } from '@mui/material';
+import PostAddIcon from '@mui/icons-material/PostAdd';
+import ListAltIcon from '@mui/icons-material/ListAlt';
 import ScienceIcon from '@mui/icons-material/Science';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import FunctionsIcon from '@mui/icons-material/Functions';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import TranslateIcon from '@mui/icons-material/Translate';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import EmojiFoodBeverageIcon from '@mui/icons-material/EmojiFoodBeverage';
 
-import { useGetTest } from '@app/api';
 import { ThemeMode } from '@app/constants/theme';
 import { ScrollTop } from '@app/layout/scrollTop';
 import { Typography, Avatar } from '@app/skeleton';
-import { useMode, useGetInitials } from '@app/hooks';
-// import { main, getMany } from '@prisma/prisma-script'
+import { useThemeMode, useGetInitials } from '@app/hooks';
 
 const categories = [
   {
@@ -100,9 +95,6 @@ export interface LayoutProps {
 
 const Item = ({ item, active, type = 'category', ...props }: ItemProps) => {
   const initials = useGetInitials(item?.name || '');
-  // console.log('getmany',getMany());
-  const { data } = useGetTest();
-  console.log('test data', data)
 
   return (
     <MenuItem
@@ -132,22 +124,76 @@ const Item = ({ item, active, type = 'category', ...props }: ItemProps) => {
       ) : (
         item?.icon
       )}
-      <Typography variant="h5">{item?.name}</Typography>
+      <Typography isLoading variant="h5">
+        {item?.name}
+      </Typography>
     </MenuItem>
   );
 };
 
+export interface HeaderAction {
+  readonly id: string;
+  readonly path?: string;
+  readonly icon: ReactNode;
+  readonly visible: boolean;
+  readonly onClick?: () => void;
+}
+
 export const Layout = ({ children }: LayoutProps) => {
-  const { mode } = useMode();
+  const { push, pathname } = useRouter();
+  const { t } = useTranslation();
+  const [layoutHeight, setLayoutHeight] = useState<number>(0);
   const [activeItem, setActiveItem] = useState<Item | undefined>();
+  const head = pathname.replace('/', '');
+  const { mode, toggleMode } = useThemeMode();
+
+  // @ts-ignore
+  const headerActionList: HeaderAction[] = useMemo(
+    () => [
+      {
+        id: 'post-list',
+        path: '/posts',
+        icon: <ListAltIcon />,
+        visible: true,
+      },
+      {
+        id: 'create-post',
+        path: '/posts/create',
+        icon: <PostAddIcon />,
+        visible: true,
+      },
+      { id: 'plural', path: '/plural', icon: <TranslateIcon />, visible: true },
+      { id: 'cart', path: '/cart', icon: <ShoppingCartIcon />, visible: true },
+      { id: 'favorite', path: '/favorite', icon: <FavoriteIcon />, visible: true },
+      { id: 'sign-up', path: '/sign-up', icon: <AccountCircleIcon />, visible: true },
+      {
+        id: 'theme/mode',
+        onClick: toggleMode,
+        icon: mode === ThemeMode.Dark ? <DarkModeIcon /> : <LightModeIcon />,
+        visible: true,
+      },
+    ],
+    [toggleMode, mode],
+  );
+
+  const footerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (footerRef.current) {
+      setLayoutHeight(footerRef.current.getBoundingClientRect().height);
+    }
+  }, []);
 
   const selected = [...teachers, ...categories].find(item => activeItem?.name === item?.name);
 
   return (
     <>
       <Box id="back-to-top-anchor" />
-
-      <Box display="flex">
+      <Head>
+        <title>{t(`head:${head}`)}</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Box display="flex" minHeight={`calc(100vh - ${layoutHeight}px)`}>
         <Box width={300}>
           <AppBar
             component="header"
@@ -161,8 +207,8 @@ export const Layout = ({ children }: LayoutProps) => {
               backdropFilter: 'blur(4px)',
             }}
           >
-            <Box display="flex" height={56}>
-              <Item disabled item={activeItem} />
+            <Box display="flex" justifyContent="center" alignItems="center" height={56}>
+              <EmojiFoodBeverageIcon sx={{ height: 50, width: 50, fill: theme => theme.palette.primary.main }} />
             </Box>
           </AppBar>
 
@@ -187,8 +233,17 @@ export const Layout = ({ children }: LayoutProps) => {
             position="sticky"
             sx={{ top: 0, backgroundColor: 'background.paper', backdropFilter: 'blur(4px)' }}
           >
-            <Box display="flex" justifyContent="flex-end" p={1}>
-              <IconButton>{mode === ThemeMode.Light ? <DarkModeIcon /> : <LightModeIcon />}</IconButton>
+            <Box display="flex" justifyContent="flex-end" p={1} gap={2}>
+              {headerActionList
+                .filter(item => item.visible)
+                .map(item => (
+                  <Tooltip key={item.id} title={t(`head:${item.id}`)}>
+                    {/* @ts-ignore */}
+                    <IconButton onClick={() => (item.onClick ? item.onClick() : push(item?.path))}>
+                      {item.icon}
+                    </IconButton>
+                  </Tooltip>
+                ))}
             </Box>
           </AppBar>
 
@@ -226,9 +281,11 @@ export const Layout = ({ children }: LayoutProps) => {
         </Box>
       </Box>
 
-      <AppBar component="footer" position="relative" sx={{ backgroundColor: 'background.paper' }}>
+      <AppBar ref={footerRef} component="footer" position="relative" sx={{ backgroundColor: 'background.paper' }}>
         <Box p={1}>
-          <Typography variant="h4">Additional tasks</Typography>
+          <Typography variant="h4">
+            Additional tasks ({t('pageCount', { count: 1, ns: 'plural' })}) | {t('button.save')}
+          </Typography>
         </Box>
       </AppBar>
 

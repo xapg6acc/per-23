@@ -38,3 +38,27 @@ model User {
   Post    Post[]
   Profile Profile?
 }
+
+model FutureUser {
+  id      Int      @id @default(autoincrement())
+  name    String?  @db.VarChar(255)
+  email   String   @unique @db.VarChar(255)
+
+  verificationCode String? @db.Text @unique
+
+  verified Boolean? @default(false)
+  provider String?
+
+  passwordResetToken String?
+  passwordResetAt DateTime?
+
+  role RoleEnumType? @default(user)
+
+  @@unique([email, verificationCode, passwordResetToken])
+  @@index([email, verificationCode,passwordResetToken])
+}
+
+enum RoleEnumType {
+  user
+  admin
+}

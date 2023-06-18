@@ -1,72 +1,90 @@
+import { useMemo } from 'react';
 import { createTheme, PaletteMode } from '@mui/material';
 import { deepPurple, indigo, orange } from '@mui/material/colors';
 
-import {  } from '@app/api';
-import { theme } from '@app/config/theme';
-import { useTransparentColor } from '@app/hooks/useTransparentColor';
+import { ThemeMode } from '@app/constants/theme';
+import { theme, transparentColor, appConfig } from '@app/config';
 
 export const useModeToken = (mode: PaletteMode) => {
-  const darkColor = useTransparentColor(indigo[200], '1');
-  const lightColor = useTransparentColor(deepPurple[900]);
-  const lightDefaultPaper = useTransparentColor(indigo[50]);
-  const darkDefaultPaper = useTransparentColor('#092A57');
-  const lightDefault = useTransparentColor('#FFF', '0.1');
-  const darkDefault = useTransparentColor('#092a57', 1);
-  const darkSecondaryMain = useTransparentColor(indigo[600], 1);
-  const lightSecondaryMain = useTransparentColor(deepPurple[600], '1');
-  const darkSecondaryContrast = useTransparentColor(indigo[800]);
-  const lightSecondaryContrast = useTransparentColor(orange[800]);
-  // const x = useTestTheme();
-  // console.log(x);
+  const { light, dark } = useMemo(() => {
+    const light = {
+      primary: {
+        main: transparentColor(deepPurple[900]),
+      },
+      secondary: {
+        main: transparentColor(deepPurple[600], '1'),
+        contrast: transparentColor(orange[800]),
+      },
+      background: {
+        default: transparentColor('#FFF', '0.1'),
+        paper: transparentColor(indigo[100]),
+      },
+    };
 
-  // console.log('dark color:', darkColor);
-  // console.log('deep purple color:', lightColor);
+    const dark = {
+      primary: {
+        main: transparentColor(indigo[200], '1'),
+      },
+      secondary: {
+        main: transparentColor(indigo[600], 1),
+        contrast: transparentColor(indigo[800]),
+      },
+      background: {
+        default: transparentColor('#092a57', 1),
+        paper: transparentColor('#092A57'),
+      },
+    };
 
-  const customMode = {
-    ...theme,
-    palette: {
-      mode,
-      ...(mode === 'light'
-        ? {
-            primary: {
-              main: lightColor,
-              light: '',
-            },
-            background: {
-              default: lightDefault,
-              paper: lightDefaultPaper,
-            },
-            secondary: {
-              main: darkSecondaryMain,
-              contrastText: darkSecondaryContrast,
-            },
-          }
-        : {
-            primary: {
-              main: darkColor,
-            },
-            background: {
-              default: darkDefault,
-              paper: darkDefaultPaper,
-            },
-            secondary: {
-              main: lightSecondaryMain,
-              contrastText: lightSecondaryContrast,
-            },
-          }),
-    },
-    // component: {
-    //   MuiTypography: {
-    //     styleOverrides: {
-    //       root: {
-    //         '::selection': {
-    //           color: darkDefault,
-    //         },
-    //       },
-    //     },
-    //   },
-    // },
-  };
+    return { light, dark };
+  }, []);
+
+  const customMode = useMemo(
+    () => ({
+      ...theme,
+      palette: {
+        mode,
+        ...(mode === ThemeMode.Light
+          ? {
+              primary: {
+                main: light.primary.main,
+              },
+              background: {
+                default: light.background.default,
+                paper: light.background.paper,
+              },
+              secondary: {
+                main: dark.secondary.main,
+                contrastText: dark.secondary.contrast,
+              },
+            }
+          : {
+              primary: {
+                main: dark.primary.main,
+              },
+              background: {
+                default: dark.background.default,
+                paper: dark.background.paper,
+              },
+              secondary: {
+                main: light.secondary.main,
+                contrastText: light.secondary.contrast,
+              },
+            }),
+      },
+      // component: {
+      //   MuiTypography: {
+      //     styleOverrides: {
+      //       root: {
+      //         '::selection': {
+      //           color: darkDefault,
+      //         },
+      //       },
+      //     },
+      //   },
+      // },
+    }),
+    [mode, light, dark],
+  );
 
   return createTheme(customMode);
 };

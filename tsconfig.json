@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "target": "es5",
+    "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -16,16 +16,23 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@prisma/*": ["prisma/*"],
       "@app/*": ["src/*"],
       "@config/*": ["src/config/*"],
       "@language/*": ["src/language/*"],
       "@layout/*": ["src/layout/*"],
-      "@skeleton/*": ["src/skeleton/*"]
+      "@skeleton": ["src/skeleton/index.tsx"],
+      "@skeleton/*": ["src/skeleton/*"],
+      "@lib/*": ["lib/*"],
+      "@types": ["src/types/index.ts"],
+      "@point/*": ["prisma/*"],
+      "@pages/*": ["pages/*"],
+      "@ui": ["src/ui/index.tsx"],
+      "@formik": ["src/index.tsx"],
+      "@auth": ["src/auth/index.tsx"],
     }
   },
-  "include": ["next-env.d.ts", "custom.d.ts", "**/*.ts", "**/*.tsx", "*/*.mjs", "*/*.js", "*/*c.js"],
+  "include": ["next-env.d.ts", "custom.d.ts", "**/*.ts", "**/*.tsx", "**/*.mjs", "*/*.js", "*/*.js", "prisma/**/*.ts", "**/*.cjs"],
   "exclude": ["node_modules"],
-  "types": ["node", "pg"],
-  "lib": ["es6"]
+  "types": ["node", "pg", "module"],
+//  "lib": ["esnext"]
 }

@@ -1,0 +1,10 @@
+{
+  "register": "Зареєструватися",
+  "forgotPassword": "Забули пароль?",
+  "back": "Повернутися",
+  "restore": "Відновити",
+  "create": "Створити",
+  "clear": "Очістити",
+  "createPost": "$t(button:create) пост",
+  "clearForm": "$t(button:clear) форму"
+}

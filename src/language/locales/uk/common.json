@@ -1,0 +1,7 @@
+{
+  "button": {
+    "save": "Save",
+    "source": "Go to source"
+  },
+  "lorem": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. <strong>$t(plural:dayCount)</strong> Aperiam dignissimos eveniet expedita harum ipsam laudantium minima quod? Adipisci consectetur deleniti fugiat iure nisi pariatur perferendis, quae voluptate? Aliquid, temporibus, ut?"
+}

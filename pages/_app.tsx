@@ -1,16 +1,16 @@
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
+import { CssBaseline } from '@mui/material';
+import { SnackbarProvider } from 'notistack';
 import { ModalProvider } from 'react-modal-hook';
 import { appWithTranslation } from 'next-i18next';
-import { CssBaseline, ThemeProvider } from '@mui/material';
 
 import { Layout } from '@app/layout';
 import { QueryProvider } from '@app/api';
-import { useMode, useModeToken } from '@app/hooks';
+import { ThemeProvider as CustomThemeProvider } from '@app/context';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const { mode } = useMode();
-  const customTheme = useModeToken(mode);
+  // console.log(contextMode, mode, themeMode);
   // console.log('theme', {
   //   mode: customTheme?.palette.mode,
   //   primary: customTheme.palette.primary,
@@ -25,16 +25,18 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta property="og:type" content="website" />
       </Head>
-      <QueryProvider>
-        <ThemeProvider theme={customTheme}>
-          <ModalProvider>
+      <SnackbarProvider maxSnack={5}>
+        <QueryProvider>
+          <CustomThemeProvider>
             <CssBaseline />
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </ModalProvider>
-        </ThemeProvider>
-      </QueryProvider>
+            <ModalProvider>
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
+            </ModalProvider>
+          </CustomThemeProvider>
+        </QueryProvider>
+      </SnackbarProvider>
     </>
   );
 };
