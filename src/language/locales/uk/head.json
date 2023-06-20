@@ -8,5 +8,6 @@
   "create-post": "Створити пост",
   "post-list": "Список постів",
   "theme/mode": "Змінити тему",
-  "favorite": "Вибране"
+  "favorite": "Вибране",
+  "test-task-frontend": "Test task frontend"
 }

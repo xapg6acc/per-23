@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { ReactNode, useEffect, useState, useMemo, useRef } from 'react';
 import { AppBar, Box, IconButton, MenuItem, MenuList, MenuItemProps, Tooltip, Skeleton } from '@mui/material';
+import QuizIcon from '@mui/icons-material/Quiz';
 import PostAddIcon from '@mui/icons-material/PostAdd';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import ScienceIcon from '@mui/icons-material/Science';
@@ -23,18 +24,31 @@ import { useThemeMode, useGetInitials } from '@app/hooks';
 const categories = [
   {
     id: 1,
+    to: '/test-task-frontend',
+    name: 'Test Task Frontend',
+    icon: <QuizIcon />,
+    loading: false,
+  },
+  {
+    id: 1,
+    to: '/',
     name: 'Math',
     icon: <FunctionsIcon />,
+    loading: true,
   },
   {
     id: 2,
+    to: '/',
     name: 'Language',
     icon: <TranslateIcon />,
+    loading: true,
   },
   {
     id: 3,
+    to: '/',
     name: 'Chemistry',
     icon: <ScienceIcon />,
+    loading: true,
   },
 ];
 const teachers = [
@@ -79,6 +93,7 @@ export interface ItemProps extends MenuItemProps {
   readonly item?: Item;
   readonly active?: Item;
   readonly type?: 'user' | 'category';
+  readonly isLoading?: boolean;
 }
 
 interface Item {
@@ -93,7 +108,7 @@ export interface LayoutProps {
   readonly active?: Item;
 }
 
-const Item = ({ item, active, type = 'category', ...props }: ItemProps) => {
+const Item = ({ item, active, type = 'category', isLoading = true, ...props }: ItemProps) => {
   const initials = useGetInitials(item?.name || '');
 
   return (
@@ -124,7 +139,7 @@ const Item = ({ item, active, type = 'category', ...props }: ItemProps) => {
       ) : (
         item?.icon
       )}
-      <Typography isLoading variant="h5">
+      <Typography isLoading={isLoading} variant="h5">
         {item?.name}
       </Typography>
     </MenuItem>
@@ -215,7 +230,13 @@ export const Layout = ({ children }: LayoutProps) => {
           <Box position="sticky" top={60}>
             <MenuList sx={{ py: 0 }}>
               {categories.map(item => (
-                <Item key={item.name} item={item} active={selected} onClick={() => setActiveItem(item)} />
+                <Item
+                  key={item.name}
+                  item={item}
+                  active={selected}
+                  isLoading={item.loading}
+                  onClick={() => push(item.to)}
+                />
               ))}
             </MenuList>
             <Skeleton height={5} animation="wave" />
