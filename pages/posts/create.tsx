@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import { CreatePostForm } from '@app/post/components/CreatePostForm';
+import { CreatePostForm } from '@app/old/post/components/CreatePostForm';
 
 const CreatePostFormPage: NextPage = () => {
   return (

@@ -1,21 +1,21 @@
 import { Prisma, PrismaClient } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { ApiError } from '@types';
+import { ApiError } from '@app/old/types';
 
 const prisma = new PrismaClient();
 
 export default async function deleteUser<T>(req: NextApiRequest, res: NextApiResponse<T | ApiError>) {
   try {
-    const deletePost = await prisma.post.delete({
-      where: {
-        id: Number(req.query.id),
-      },
-    });
+    // const deletePost = await prisma.post.delete({
+    //   where: {
+    //     id: Number(req.query.id),
+    //   },
+    // });
     // console.log('here try');
     // console.log('delete post', deletePost.id);
 
-    console.log(deletePost);
+    // console.log(deletePost);
     // const transaction = await prisma.$transaction([deletePost]);
     await res.status(200).json({
       // body: transaction,

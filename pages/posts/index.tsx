@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import { PostList } from '@app/post/components/PostList';
+import { PostList } from '@app/old/post/components/PostList';
 
 const PostListPage: NextPage = () => {
   return (

@@ -3,9 +3,9 @@ import { GetStaticProps, NextPage } from 'next';
 import { Grid, Typography } from '@mui/material';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import { Paper } from '@skeleton';
-import { Level } from "@app/constants/level";
-import image from '@app/images/wallhaven-l83o92.jpeg';
+import { Paper } from '@app/old/skeleton';
+import { Level } from "@app/old/constants/level";
+import image from '@app/old/images/wallhaven-l83o92.jpeg';
 
 const list = [
   { title: 'Title 1', description: 'Description 1', category: 'Math', level: Level.Easy },

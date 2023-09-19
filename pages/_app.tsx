@@ -2,22 +2,15 @@ import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import { CssBaseline } from '@mui/material';
 import { SnackbarProvider } from 'notistack';
-import { ModalProvider } from 'react-modal-hook';
 import { appWithTranslation } from 'next-i18next';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-import { Layout } from '@app/layout';
-import { QueryProvider } from '@app/api';
-import { ThemeProvider as CustomThemeProvider } from '@app/context';
+import { QueryProvider } from '@app/old/api';
+import { ApplicationOrdersProvider } from '@app/orders-application/components/ApplicationOrdersProvider';
+import { ApplicationProvider as PhoneCatalogApplicationProvider } from '@app/phone-catalog/components/ApplicationProvider';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  // console.log(contextMode, mode, themeMode);
-  // console.log('theme', {
-  //   mode: customTheme?.palette.mode,
-  //   primary: customTheme.palette.primary,
-  //   secondary: customTheme.palette.secondary,
-  //   background: customTheme.palette.background,
-  // });
-
   return (
     <>
       <Head>
@@ -27,14 +20,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       </Head>
       <SnackbarProvider maxSnack={5}>
         <QueryProvider>
-          <CustomThemeProvider>
-            <CssBaseline />
-            <ModalProvider>
-              <Layout>
-                <Component {...pageProps} />
-              </Layout>
-            </ModalProvider>
-          </CustomThemeProvider>
+          <PhoneCatalogApplicationProvider>
+            <ApplicationOrdersProvider>
+              <CssBaseline />
+              <Component {...pageProps} />
+            </ApplicationOrdersProvider>
+          </PhoneCatalogApplicationProvider>
         </QueryProvider>
       </SnackbarProvider>
     </>

@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import { ForgotPassword } from '@auth';
+import { ForgotPassword } from '@app/old/auth';
 
 const ForgotPasswordPage: NextPage = () => {
   return (

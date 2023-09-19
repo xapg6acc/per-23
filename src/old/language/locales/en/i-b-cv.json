@@ -1,0 +1,70 @@
+{
+  "additionalEducation": [
+    "FreeCodeCamp (HTML, CSS, JavaScript, Regex, React, SQL)",
+    "JavaScript",
+    "JS, HTML, CSS",
+    "React",
+    "Material UI",
+    "Next JS"
+  ],
+  "position": "Frontend Developer",
+  "experience": {
+    "type": "Fitness application",
+    "duration": "July 2022 - present (private repository)",
+    "technologies": [
+      "TypeScript",
+      "JavaScript",
+      "React",
+      "Material UI (v5, some features using v4 + date pickers)",
+      "NextJS",
+      "formik",
+      "dayJs",
+      "next-i18next (namespaces, plurals)",
+      "es-lint",
+      "prettier",
+      "immer",
+      "yup",
+      "axios",
+      "@tanstack/react-query",
+      "couple of carousel/slider-s (react-spring, slick-carousel, react-slick, slick-slider)",
+      "react-aria (useMeter)"
+    ]
+  },
+  "contact": {
+    "name": "Ivan Boiko",
+    "phone": "+38 063 399 72 51",
+    "telegram": "https://t.me/IvanBoiko_code",
+    "github": "https://github.com/xapg6acc",
+    "linkedin": "https://www.linkedin.com/in/ivan-boiko-84a171112/",
+    "location": "Kyiv, Ukraine",
+    "email": "ivan.boiko.code@gmail.com"
+  },
+  "relevant": {
+    "availability": "Ready to work remotely",
+    "coworking": "Ready to work in co-working",
+    "relocate": "Ready to relocate",
+    "laptop": "Have own laptop"
+  },
+  "skills": [
+    "Pixel perfect, follow code style",
+    "Typescript, JavaScript (ES2015 - 2019)",
+    "React, Redux",
+    "HTML5, CSS3, Sass (SCSS), BEM, Bootstrap, Material UI (v4, v5), Material Design",
+    "Fetch, REST API, Web sockets, SQL, axios, react-query",
+    "Photoshop, Figma",
+    "Git/Github, VS Code, WebStorm, Chrome Developer Tools (incl. React), NPM, Webpack, Brackets",
+    "Algorithms: Solved 36 katas on CodeWars",
+    "Basic OOP understanding",
+    "English: intermediate"
+  ],
+  "achievements": [
+    "Multiple half-marathon Runner (21km)",
+    "Passed all the tracks of Bukovel on a snowboard",
+    "Critical thinking"
+  ],
+  "books": [
+    "Steve Krug - Don't make me think",
+    "Peter Yaworski - Web hacking basics",
+    "Blake Masters and Peter Thiel - Zero to One"
+  ]
+}

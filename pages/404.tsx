@@ -2,7 +2,7 @@ import { useTranslation } from 'next-i18next';
 import type { NextPage, GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import { Typography } from '@skeleton';
+import { Typography } from '@app/old/skeleton';
 
 const ErrorPage: NextPage = () => {
   const { t } = useTranslation('common');

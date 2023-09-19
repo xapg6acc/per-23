@@ -1,0 +1,77 @@
+{
+  "general": {
+    "day": {
+      "Sunday": "Domingo",
+      "Monday": "Lunes",
+      "Tuesday": "Martes",
+      "Wednesday": "Miércoles",
+      "Thursday": "Jueves",
+      "Friday": "Viernes",
+      "Saturday": "Sábado"
+    },
+    "search": "Buscar",
+    "button": {
+      "addMore": "Agregar más"
+    }
+  },
+  "menu": {
+    "coming": "Llegada",
+    "groups": "Grupos",
+    "products": "Productos",
+    "users": "Usuarios",
+    "settings": "Configuración"
+  },
+  "group": {
+    "monitor": "Lista de monitores",
+    "laptop": "Lista de laptops"
+  },
+  "product": {
+    "addToOrder": "Agregar al pedido",
+    "date": "Fecha",
+    "guaranteeEnd": "Fin de garantía",
+    "guaranteeStart": "Inicio de garantía",
+    "guaranteeRange": "desde <span> {{start}} </span><br /> hasta <span>{{end}}</span>",
+    "id": "Id",
+    "isNew": "Estado",
+    "order": "Pedido",
+    "photo": "Foto",
+    "price": "Precio",
+    "serialNumber": "Número de serie",
+    "specification": "Especificación",
+    "title": "Título",
+    "type": "Tipo",
+    "times_one": "producto",
+    "times_few": "por productos",
+    "times_many": "$t(product.times_few)",
+    "timesCount": "<strong>{{count}}</strong> $t(product.times)",
+    "modal": {
+      "deleteContent": "¿Estás seguro de que deseas eliminar los pedidos de $t(product.timesCount)",
+      "deleteTitle": "Eliminar {{title}}"
+    }
+  },
+  "inventory": "Inventario",
+  "language": {
+    "title": "Idioma",
+    "de": "Alemán",
+    "es": "Español",
+    "en": "Inglés",
+    "uk": "Ucraniano"
+  },
+  "currency": {
+    "title": "Moneda",
+    "usd": "dólar",
+    "uah": "jrivnia"
+  },
+  "status": {
+    "new": "Nuevo",
+    "old": "Usado"
+  },
+  "order": {
+    "title": "Lorem ipsum dolor sin título {{count}}",
+    "modalTitle": "¿Estás seguro de que deseas quitar el producto del pedido?"
+  },
+  "products_one": "producto",
+  "products_few": "productos",
+  "products_many": "productos",
+  "productsCount": "<strong>{{count}}</strong> $t(products)"
+}

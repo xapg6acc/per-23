@@ -1,0 +1,77 @@
+{
+  "general": {
+    "day": {
+      "Sunday": "Sunday",
+      "Monday": "Monday",
+      "Tuesday": "Tuesday",
+      "Wednesday": "Wednesday",
+      "Thursday": "Thursday",
+      "Friday": "Friday",
+      "Saturday": "Saturday"
+    },
+    "search": "Search",
+    "button": {
+      "addMore": "Add more"
+    }
+  },
+  "menu": {
+    "coming": "Arrival",
+    "groups": "Groups",
+    "products": "Products",
+    "users": "Users",
+    "settings": "Settings"
+  },
+  "group": {
+    "monitor": "List of monitors",
+    "laptop": "List of laptops"
+  },
+  "product": {
+    "addToOrder": "Add to order",
+    "date": "Data",
+    "guaranteeEnd": "End of guarantee",
+    "guaranteeStart": "Warranty Start",
+    "guaranteeRange": "from <span> {{start}} </span><br /> to <span>{{end}}</span>",
+    "id": "Id",
+    "isNew": "Status",
+    "order": "Order",
+    "photo": "Photo",
+    "price": "price",
+    "serialNumber": "Serial Number",
+    "specification": "Specification",
+    "title": "Title",
+    "type": "Type",
+    "times_one": "product",
+    "times_few": "by products",
+    "times_many": "$t(product.times_few)",
+    "timesCount": "<strong>{{count}}</strong> $t(product.times)",
+    "modal": {
+      "deleteContent": "Are you sure you want to delete orders from $t(product.timesCount)",
+      "deleteTitle": "Delete {{title}}"
+    }
+  },
+  "inventory": "Inventory",
+  "language": {
+    "title": "Language",
+    "de": "German",
+    "es": "Spanish",
+    "en": "English",
+    "uk": "Ukrainian"
+  },
+  "currency": {
+    "title": "Currency",
+    "usd": "dollar",
+    "uah": "hryvnia"
+  },
+  "status": {
+    "new": "Old",
+    "old": "Used"
+  },
+  "order": {
+    "title": "Lorem ipsum dolor sin amet title {{count}}",
+    "modalTitle": "Are you sure you want to remove the product from the order?"
+  },
+  "products_one": "product",
+  "products_few": "products",
+  "products_many": "products",
+  "productsCount": "<strong>{{count}}</strong> $t(products)"
+}

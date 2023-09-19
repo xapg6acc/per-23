@@ -1,0 +1,77 @@
+{
+  "general": {
+    "day": {
+      "Sunday": "Sonntag",
+      "Monday": "Montag",
+      "Tuesday": "Dienstag",
+      "Wednesday": "Mittwoch",
+      "Thursday": "Donnerstag",
+      "Friday": "Freitag",
+      "Saturday": "Samstag"
+    },
+    "search": "Suche",
+    "button": {
+      "addMore": "Mehr hinzufügen"
+    }
+  },
+  "menu": {
+    "coming": "Ankunft",
+    "groups": "Gruppen",
+    "products": "Produkte",
+    "users": "Benutzer",
+    "settings": "Einstellungen"
+  },
+  "group": {
+    "monitor": "Liste der Monitore",
+    "laptop": "Liste der Laptops"
+  },
+  "product": {
+    "addToOrder": "Zum Auftrag hinzufügen",
+    "date": "Datum",
+    "guaranteeEnd": "Ende der Garantie",
+    "guaranteeStart": "Start der Garantie",
+    "guaranteeRange": "von <span> {{start}} </span><br /> bis <span>{{end}}</span>",
+    "id": "ID",
+    "isNew": "Status",
+    "order": "Bestellung",
+    "photo": "Foto",
+    "price": "Preis",
+    "serialNumber": "Seriennummer",
+    "specification": "Spezifikation",
+    "title": "Titel",
+    "type": "Typ",
+    "times_one": "Produkt",
+    "times_few": "nach Produkten",
+    "times_many": "$t(product.times_few)",
+    "timesCount": "<strong>{{count}}</strong> $t(product.times)",
+    "modal": {
+      "deleteContent": "Sind Sie sicher, dass Sie Bestellungen von $t(product.timesCount) löschen möchten?",
+      "deleteTitle": "{{title}} löschen"
+    }
+  },
+  "inventory": "Inventar",
+  "language": {
+    "title": "Sprache",
+    "de": "Deutsch",
+    "es": "Spanisch",
+    "en": "Englisch",
+    "uk": "Ukrainisch"
+  },
+  "currency": {
+    "title": "Währung",
+    "usd": "Dollar",
+    "uah": "Hrywnja"
+  },
+  "status": {
+    "new": "Alt",
+    "old": "Gebraucht"
+  },
+  "order": {
+    "title": "Lorem ipsum dolor sin amet Titel {{count}}",
+    "modalTitle": "Sind Sie sicher, dass Sie das Produkt aus der Bestellung entfernen möchten?"
+  },
+  "products_one": "Produkt",
+  "products_few": "Produkte",
+  "products_many": "Produkte",
+  "productsCount": "<strong>{{count}}</strong> $t(products)"
+}

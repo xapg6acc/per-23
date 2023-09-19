@@ -32,7 +32,7 @@
     }
   },
   "include": ["next-env.d.ts", "custom.d.ts", "**/*.ts", "**/*.tsx", "**/*.mjs", "*/*.js", "*/*.js", "prisma/**/*.ts", "**/*.cjs"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "tmp"],
   "types": ["node", "pg", "module"],
 //  "lib": ["esnext"]
 }

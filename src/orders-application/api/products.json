@@ -1,0 +1,572 @@
+[
+  {
+    "id": 1,
+    "serialNumber": 1234,
+    "isNew": 1,
+    "photo": "orders-application/monitor-1.jpg",
+    "title": "Dell Professional 27 inches, 1920 x 1080 Pixels Full HD",
+    "type": "Monitor",
+    "specification": "sn-12-345678",
+    "guarantee": {
+      "start": "2017-06-29 12:09:33",
+      "end": "2017-09-29 12:09:33"
+    },
+    "price": [
+      { "value": 100, "symbol": "USD", "isDefault": 0 },
+      { "value": 2600, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 1,
+    "date": "2017-06-29 12:09:33"
+  },
+  {
+    "id": 2,
+    "serialNumber": 5678,
+    "isNew": 0,
+    "photo": "orders-application/monitor-2.jpg",
+    "title": "Samsung UltraWide 34 inches, 3440 x 1440 Pixels QHD",
+    "type": "Monitor",
+    "specification": "sn-23-456789",
+    "guarantee": {
+      "start": "2018-03-15 10:30:45",
+      "end": "2018-06-15 10:30:45"
+    },
+    "price": [
+      { "value": 200, "symbol": "USD", "isDefault": 0 },
+      { "value": 5200, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 2,
+    "date": "2018-03-15 10:30:45"
+  },
+  {
+    "id": 3,
+    "serialNumber": 9876,
+    "isNew": 1,
+    "photo": "orders-application/monitor-3.jpg",
+    "title": "LG 32 inches, 2560 x 1440 Pixels QHD",
+    "type": "Monitor",
+    "specification": "sn-34-567890",
+    "guarantee": {
+      "start": "2019-02-10 09:15:22",
+      "end": "2019-05-10 09:15:22"
+    },
+    "price": [
+      { "value": 150, "symbol": "USD", "isDefault": 0 },
+      { "value": 3900, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 3,
+    "date": "2019-02-10 09:15:22"
+  },
+  {
+    "id": 4,
+    "serialNumber": 4321,
+    "isNew": 0,
+    "photo": "orders-application/monitor-1.jpg",
+    "title": "HP 24 inches, 1920 x 1080 Pixels Full HD",
+    "type": "Monitor",
+    "specification": "sn-45-678901",
+    "guarantee": {
+      "start": "2020-07-20 14:45:10",
+      "end": "2020-10-20 14:45:10"
+    },
+    "price": [
+      { "value": 120, "symbol": "USD", "isDefault": 0 },
+      { "value": 3120, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 3,
+    "date": "2020-07-20 14:45:10"
+  },
+  {
+    "id": 5,
+    "serialNumber": 7890,
+    "isNew": 1,
+    "photo": "orders-application/monitor-3.jpg",
+    "title": "Acer 29 inches, 2560 x 1080 Pixels UltraWide",
+    "type": "Monitor",
+    "specification": "sn-56-789012",
+    "guarantee": {
+      "start": "2021-11-05 08:20:55",
+      "end": "2022-02-05 08:20:55"
+    },
+    "price": [
+      { "value": 180, "symbol": "USD", "isDefault": 0 },
+      { "value": 4680, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 2,
+    "date": "2021-11-05 08:20:55"
+  },
+  {
+    "id": 6,
+    "serialNumber": 1357,
+    "isNew": 0,
+    "photo": "orders-application/monitor-3.jpg",
+    "title": "ASUS 27 inches, 2560 x 1440 Pixels QHD",
+    "type": "Monitor",
+    "specification": "sn-67-890123",
+    "guarantee": {
+      "start": "2022-09-18 11:55:30",
+      "end": "2022-12-18 11:55:30"
+    },
+    "price": [
+      { "value": 190, "symbol": "USD", "isDefault": 0 },
+      { "value": 4940, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 1,
+    "date": "2022-09-18 11:55:30"
+  },
+  {
+    "id": 7,
+    "serialNumber": 2468,
+    "isNew": 1,
+    "photo": "orders-application/monitor-1.jpg",
+    "title": "ViewSonic 32 inches, 1920 x 1080 Pixels Full HD",
+    "type": "Monitor",
+    "specification": "sn-78-901234",
+    "guarantee": {
+      "start": "2023-04-25 13:40:15",
+      "end": "2023-07-25 13:40:15"
+    },
+    "price": [
+      { "value": 160, "symbol": "USD", "isDefault": 0 },
+      { "value": 4160, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 1,
+    "date": "2023-04-25 13:40:15"
+  },
+  {
+    "id": 8,
+    "serialNumber": 5432,
+    "isNew": 0,
+    "photo": "orders-application/monitor-1.jpg",
+    "title": "BenQ 24 inches, 1920 x 1080 Pixels Full HD",
+    "type": "Monitor",
+    "specification": "sn-89-012345",
+    "guarantee": {
+      "start": "2024-01-08 07:10:50",
+      "end": "2024-04-08 07:10:50"
+    },
+    "price": [
+      { "value": 130, "symbol": "USD", "isDefault": 0 },
+      { "value": 3380, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 2,
+    "date": "2024-01-08 07:10:50"
+  },
+  {
+    "id": 9,
+    "serialNumber": 9876,
+    "isNew": 1,
+    "photo": "orders-application/monitor-1.jpg",
+    "title": "Dell UltraSharp 27 inches, 2560 x 1440 Pixels QHD",
+    "type": "Monitor",
+    "specification": "sn-90-123456",
+    "guarantee": {
+      "start": "2024-09-12 16:25:05",
+      "end": "2024-12-12 16:25:05"
+    },
+    "price": [
+      { "value": 220, "symbol": "USD", "isDefault": 0 },
+      { "value": 5720, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 3,
+    "date": "2024-09-12 16:25:05"
+  },
+  {
+    "id": 10,
+    "serialNumber": 1357,
+    "isNew": 0,
+    "photo": "orders-application/monitor-1.jpg",
+    "title": "AOC 24 inches, 1920 x 1080 Pixels Full HD",
+    "type": "Monitor",
+    "specification": "sn-01-234567",
+    "guarantee": {
+      "start": "2025-06-30 19:35:40",
+      "end": "2025-09-30 19:35:40"
+    },
+    "price": [
+      { "value": 140, "symbol": "USD", "isDefault": 0 },
+      { "value": 3640, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 3,
+    "date": "2025-06-30 19:35:40"
+  },
+  {
+    "id": 11,
+    "serialNumber": 2468,
+    "isNew": 1,
+    "photo": "orders-application/monitor-1.jpg",
+    "title": "HP Pavilion 32 inches, 2560 x 1440 Pixels QHD",
+    "type": "Monitor",
+    "specification": "sn-12-345678",
+    "guarantee": {
+      "start": "2026-03-05 22:50:25",
+      "end": "2026-06-05 22:50:25"
+    },
+    "price": [
+      { "value": 200, "symbol": "USD", "isDefault": 0 },
+      { "value": 5200, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 2,
+    "date": "2026-03-05 22:50:25"
+  },
+  {
+    "id": 12,
+    "serialNumber": 5432,
+    "isNew": 0,
+    "photo": "orders-application/monitor-1.jpg",
+    "title": "ASUS ProArt 27 inches, 2560 x 1440 Pixels QHD",
+    "type": "Monitor",
+    "specification": "sn-23-456789",
+    "guarantee": {
+      "start": "2027-08-10 15:05:00",
+      "end": "2027-11-10 15:05:00"
+    },
+    "price": [
+      { "value": 180, "symbol": "USD", "isDefault": 0 },
+      { "value": 4680, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 2,
+    "date": "2027-08-10 15:05:00"
+  },
+  {
+    "id": 13,
+    "serialNumber": 1234,
+    "isNew": 1,
+    "photo": "orders-application/monitor-1.jpg",
+    "title": "LG UltraGear 34 inches, 3440 x 1440 Pixels QHD",
+    "type": "Monitor",
+    "specification": "sn-34-567890",
+    "guarantee": {
+      "start": "2028-02-20 18:20:35",
+      "end": "2028-05-20 18:20:35"
+    },
+    "price": [
+      { "value": 220, "symbol": "USD", "isDefault": 0 },
+      { "value": 5720, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 3,
+    "date": "2028-02-20 18:20:35"
+  },
+  {
+    "id": 14,
+    "serialNumber": 4321,
+    "isNew": 0,
+    "photo": "orders-application/monitor-1.jpg",
+    "title": "BenQ PD2700U 27 inches, 3840 x 2160 Pixels 4K UHD",
+    "type": "Monitor",
+    "specification": "sn-45-678901",
+    "guarantee": {
+      "start": "2029-06-05 21:45:15",
+      "end": "2029-09-05 21:45:15"
+    },
+    "price": [
+      { "value": 240, "symbol": "USD", "isDefault": 0 },
+      { "value": 6240, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 1,
+    "date": "2029-06-05 21:45:15"
+  },
+  {
+    "id": 15,
+    "serialNumber": 7890,
+    "isNew": 1,
+    "photo": "orders-application/monitor-1.jpg",
+    "title": "ViewSonic VX3276-4K-MHD 32 inches, 3840 x 2160 Pixels 4K UHD",
+    "type": "Monitor",
+    "specification": "sn-56-789012",
+    "guarantee": {
+      "start": "2030-12-15 03:15:55",
+      "end": "2031-03-15 03:15:55"
+    },
+    "price": [
+      { "value": 250, "symbol": "USD", "isDefault": 0 },
+      { "value": 6500, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 2,
+    "date": "2030-12-15 03:15:55"
+  },
+  {
+    "id": 16,
+    "serialNumber": 1357,
+    "isNew": 0,
+    "photo": "orders-application/monitor-1.jpg",
+    "title": "Acer Predator X27 27 inches, 3840 x 2160 Pixels 4K UHD",
+    "type": "Monitor",
+    "specification": "sn-67-890123",
+    "guarantee": {
+      "start": "2032-07-01 06:30:40",
+      "end": "2032-10-01 06:30:40"
+    },
+    "price": [
+      { "value": 260, "symbol": "USD", "isDefault": 0 },
+      { "value": 6760, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 3,
+    "date": "2032-07-01 06:30:40"
+  },
+  {
+    "id": 17,
+    "serialNumber": 2468,
+    "isNew": 1,
+    "photo": "orders-application/monitor-1.jpg",
+    "title": "Dell Alienware AW3418DW 34 inches, 3440 x 1440 Pixels QHD",
+    "type": "Monitor",
+    "specification": "sn-78-901234",
+    "guarantee": {
+      "start": "2033-04-10 09:55:25",
+      "end": "2033-07-10 09:55:25"
+    },
+    "price": [
+      { "value": 230, "symbol": "USD", "isDefault": 0 },
+      { "value": 5980, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 1,
+    "date": "2033-04-10 09:55:25"
+  },
+  {
+    "id": 18,
+    "serialNumber": 5432,
+    "isNew": 0,
+    "photo": "orders-application/monitor-1.jpg",
+    "title": "ASUS ROG Swift PG279QZ 27 inches, 2560 x 1440 Pixels QHD",
+    "type": "Monitor",
+    "specification": "sn-89-012345",
+    "guarantee": {
+      "start": "2034-10-22 12:05:10",
+      "end": "2035-01-22 12:05:10"
+    },
+    "price": [
+      { "value": 210, "symbol": "USD", "isDefault": 0 },
+      { "value": 5460, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 1,
+    "date": "2034-10-22 12:05:10"
+  },
+  {
+    "id": 19,
+    "serialNumber": 1234,
+    "isNew": 1,
+    "photo": "orders-application/monitor-1.jpg",
+    "title": "Samsung Odyssey G7 27 inches, 2560 x 1440 Pixels QHD",
+    "type": "Monitor",
+    "specification": "sn-90-123456",
+    "guarantee": {
+      "start": "2035-06-12 14:20:55",
+      "end": "2035-09-12 14:20:55"
+    },
+    "price": [
+      { "value": 240, "symbol": "USD", "isDefault": 0 },
+      { "value": 6240, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 2,
+    "date": "2035-06-12 14:20:55"
+  },
+  {
+    "id": 20,
+    "serialNumber": 4321,
+    "isNew": 0,
+    "photo": "orders-application/monitor-1.jpg",
+    "title": "LG 27UK850-W 27 inches, 3840 x 2160 Pixels 4K UHD",
+    "type": "Monitor",
+    "specification": "sn-01-234567",
+    "guarantee": {
+      "start": "2036-01-25 17:45:35",
+      "end": "2036-04-25 17:45:35"
+    },
+    "price": [
+      { "value": 250, "symbol": "USD", "isDefault": 0 },
+      { "value": 6500, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 1,
+    "date": "2036-01-25 17:45:35"
+  },
+  {
+    "id": 21,
+    "serialNumber": 1111,
+    "isNew": 1,
+    "photo": "orders-application/laptop-1.jpg",
+    "title": "HP Envy x360 13-inch 2-in-1 Laptop",
+    "type": "Laptop",
+    "specification": "sn-lt-111111",
+    "guarantee": {
+      "start": "2022-05-15 14:30:00",
+      "end": "2022-08-15 14:30:00"
+    },
+    "price": [
+      { "value": 800, "symbol": "USD", "isDefault": 0 },
+      { "value": 20800, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 2,
+    "date": "2022-05-15 14:30:00"
+  },
+  {
+    "id": 22,
+    "serialNumber": 2222,
+    "isNew": 0,
+    "photo": "orders-application/laptop-1.jpg",
+    "title": "Dell XPS 15 15.6-inch Laptop",
+    "type": "Laptop",
+    "specification": "sn-lt-222222",
+    "guarantee": {
+      "start": "2022-07-10 12:45:00",
+      "end": "2022-10-10 12:45:00"
+    },
+    "price": [
+      { "value": 1200, "symbol": "USD", "isDefault": 0 },
+      { "value": 31200, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 2,
+    "date": "2022-07-10 12:45:00"
+  },
+  {
+    "id": 23,
+    "serialNumber": 3333,
+    "isNew": 1,
+    "photo": "orders-application/laptop-1.jpg",
+    "title": "Lenovo ThinkPad X1 Carbon 14-inch Laptop",
+    "type": "Laptop",
+    "specification": "sn-lt-333333",
+    "guarantee": {
+      "start": "2022-09-20 10:15:00",
+      "end": "2022-12-20 10:15:00"
+    },
+    "price": [
+      { "value": 1100, "symbol": "USD", "isDefault": 0 },
+      { "value": 28600, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 3,
+    "date": "2022-09-20 10:15:00"
+  },
+  {
+    "id": 24,
+    "serialNumber": 4444,
+    "isNew": 0,
+    "photo": "orders-application/laptop-1.jpg",
+    "title": "Apple MacBook Air 13-inch Laptop",
+    "type": "Laptop",
+    "specification": "sn-lt-444444",
+    "guarantee": {
+      "start": "2023-02-05 08:00:00",
+      "end": "2023-05-05 08:00:00"
+    },
+    "price": [
+      { "value": 1300, "symbol": "USD", "isDefault": 0 },
+      { "value": 33800, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 3,
+    "date": "2023-02-05 08:00:00"
+  },
+  {
+    "id": 25,
+    "serialNumber": 5555,
+    "isNew": 1,
+    "photo": "orders-application/laptop-1.jpg",
+    "title": "Asus ROG Zephyrus G14 14-inch Gaming Laptop",
+    "type": "Laptop",
+    "specification": "sn-lt-555555",
+    "guarantee": {
+      "start": "2023-06-15 16:30:00",
+      "end": "2023-09-15 16:30:00"
+    },
+    "price": [
+      { "value": 1500, "symbol": "USD", "isDefault": 0 },
+      { "value": 39000, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 2,
+    "date": "2023-06-15 16:30:00"
+  },
+  {
+    "id": 26,
+    "serialNumber": 6666,
+    "isNew": 0,
+    "photo": "orders-application/laptop-1.jpg",
+    "title": "Microsoft Surface Laptop 4 15-inch",
+    "type": "Laptop",
+    "specification": "sn-lt-666666",
+    "guarantee": {
+      "start": "2023-10-25 20:00:00",
+      "end": "2024-01-25 20:00:00"
+    },
+    "price": [
+      { "value": 1400, "symbol": "USD", "isDefault": 0 },
+      { "value": 36400, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 1,
+    "date": "2023-10-25 20:00:00"
+  },
+  {
+    "id": 27,
+    "serialNumber": 7777,
+    "isNew": 1,
+    "photo": "orders-application/laptop-1.jpg",
+    "title": "Razer Blade 15 Advanced 15.6-inch Gaming Laptop",
+    "type": "Laptop",
+    "specification": "sn-lt-777777",
+    "guarantee": {
+      "start": "2024-04-05 18:45:00",
+      "end": "2024-07-05 18:45:00"
+    },
+    "price": [
+      { "value": 1600, "symbol": "USD", "isDefault": 0 },
+      { "value": 41600, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 1,
+    "date": "2024-04-05 18:45:00"
+  },
+  {
+    "id": 28,
+    "serialNumber": 8888,
+    "isNew": 0,
+    "photo": "orders-application/laptop-1.jpg",
+    "title": "Acer Predator Helios 300 17.3-inch Gaming Laptop",
+    "type": "Laptop",
+    "specification": "sn-lt-888888",
+    "guarantee": {
+      "start": "2024-08-10 10:30:00",
+      "end": "2024-11-10 10:30:00"
+    },
+    "price": [
+      { "value": 1500, "symbol": "USD", "isDefault": 0 },
+      { "value": 39000, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 2,
+    "date": "2024-08-10 10:30:00"
+  },
+  {
+    "id": 29,
+    "serialNumber": 9999,
+    "isNew": 1,
+    "photo": "orders-application/laptop-1.jpg",
+    "title": "HP Spectre x360 13-inch 2-in-1 Laptop",
+    "type": "Laptop",
+    "specification": "sn-lt-999999",
+    "guarantee": {
+      "start": "2025-01-15 15:15:00",
+      "end": "2025-04-15 15:15:00"
+    },
+    "price": [
+      { "value": 1400, "symbol": "USD", "isDefault": 0 },
+      { "value": 36400, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 2,
+    "date": "2025-01-15 15:15:00"
+  },
+  {
+    "id": 30,
+    "serialNumber": 1010,
+    "isNew": 0,
+    "photo": "orders-application/laptop-1.jpg",
+    "title": "Lenovo Legion 7 15.6-inch Gaming Laptop",
+    "type": "Laptop",
+    "specification": "sn-lt-101010",
+    "guarantee": {
+      "start": "2025-05-20 19:45:00",
+      "end": "2025-08-20 19:45:00"
+    },
+    "price": [
+      { "value": 1600, "symbol": "USD", "isDefault": 0 },
+      { "value": 41600, "symbol": "UAH", "isDefault": 1 }
+    ],
+    "order": 2,
+    "date": "2025-05-20 19:45:00"
+  }
+]

@@ -1,7 +1,7 @@
 import { GetServerSideProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import { EditPost as PostItemPage } from '@app/post/components/EditPost';
+import { EditPost as PostItemPage } from '@app/old/post/components/EditPost';
 
 const PostPage: NextPage = () => {
   return (

@@ -1,41 +1,39 @@
-// datasource db {
-//   provider = "postgresql"
-//   url = env("DATABASE_URL")
-// }
-
-datasource db {
-  provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  // directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
-  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
-}
-
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["clientExtensions"]
 }
 
-model Post {
-  id        Int      @id @default(autoincrement())
-  title     String   @db.VarChar(255)
-  createdAt DateTime @default(now()) @db.Timestamp(6)
-  content   String?
-  published Boolean  @default(false)
-  authorId  Int
-  User      User     @relation(fields: [authorId], references: [id])
+datasource db {
+  provider          = "postgresql"
+  url               = env("POSTGRES_PER_PRISMA_URL")
+  shadowDatabaseUrl = env("POSTGRES_PER_URL_NON_POOLING")
 }
 
-model Profile {
-  id     Int     @id @default(autoincrement())
-  bio    String?
-  userId Int     @unique
-  User   User    @relation(fields: [userId], references: [id])
+model Phone {
+  id                   String                @id
+  ram                  String
+  name                 String
+  color                String
+  screen               String
+  capacity             String
+  zoom                 String
+  cell                 String[]
+  camera               String
+  images               String[]
+  processor            String
+  resolution           String
+  namespaceId          String
+  priceRegular         Float
+  priceDiscount        Float
+  colorsAvailable      String[]
+  capacityAvailable    String[]
+  detailedDescriptions DetailedDescription[]
 }
 
-model User {
-  id      Int      @id @default(autoincrement())
-  name    String?  @db.VarChar(255)
-  email   String   @unique @db.VarChar(255)
-  Post    Post[]
-  Profile Profile?
+model DetailedDescription {
+  id      String   @id
+  title   String
+  text    String[]
+  phoneId String
+  phone   Phone    @relation(fields: [phoneId], references: [id])
 }

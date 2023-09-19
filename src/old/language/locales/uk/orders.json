@@ -1,0 +1,77 @@
+{
+  "general": {
+    "day": {
+      "Sunday": "Неділя",
+      "Monday": "Понеділок",
+      "Tuesday": "Вівторок",
+      "Wednesday": "Середа",
+      "Thursday": "Четвер",
+      "Friday": "Пʼятниця",
+      "Saturday": "Субота"
+    },
+    "search": "Пошук",
+    "button": {
+      "addMore": "Додати більше"
+    }
+  },
+  "menu": {
+    "coming": "Надходження",
+    "groups": "Групи",
+    "products": "Продукти",
+    "users": "Користувачі",
+    "settings": "Налаштування"
+  },
+  "group": {
+    "monitor": "Список моніторів",
+    "laptop": "Список ноутбуків"
+  },
+  "product": {
+    "addToOrder": "Додати до ордеру",
+    "date": "Дата",
+    "guaranteeEnd": "Кінець гарантії",
+    "guaranteeStart": "Початок гарантії",
+    "guaranteeRange": "з <span> {{start}} </span><br /> до <span>{{end}}</span>",
+    "id": "Ід",
+    "isNew": "Статус",
+    "order": "Замовлення",
+    "photo": "Фото",
+    "price": "Ціна",
+    "serialNumber": "Серійний номер",
+    "specification": "Специфікація",
+    "title": "Назва",
+    "type": "Тип",
+    "times_one": "продуктом",
+    "times_few": "продуктами",
+    "times_many": "$t(product.times_few)",
+    "timesCount": "<strong>{{count}}</strong> $t(product.times)",
+    "modal": {
+      "deleteContent": "Ви впевнені, що хочете видалити ордер з $t(product.timesCount)",
+      "deleteTitle": "Видалення {{title}}"
+    }
+  },
+  "inventory": "Інвентар",
+  "language": {
+    "title": "Мова",
+    "de": "Deutsch",
+    "es": "Español",
+    "en": "English",
+    "uk": "Українська"
+  },
+  "currency": {
+    "title": "Валюта",
+    "usd": "Долар",
+    "uah": "Гривня"
+  },
+  "status": {
+    "new": "Старий",
+    "old": "Б / У"
+  },
+  "order": {
+    "title": "Lorem ipsum dolor sin amet title {{count}}",
+    "modalTitle": "Ви впевнені, що хочете видалити продукт з ордеру?"
+  },
+  "products_one": "продукт",
+  "products_few": "продукти",
+  "products_many": "продуктів",
+  "productsCount": "<strong>{{count}}</strong> $t(products)"
+}

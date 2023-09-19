@@ -1,24 +1,24 @@
 import { Prisma, PrismaClient } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { ApiError } from '@types';
+import { ApiError } from '@app/old/types';
 
 const prisma = new PrismaClient();
 
 export default async function createUser<T>(req: NextApiRequest, res: NextApiResponse<T | any>) {
   try {
-    const getPostList = await prisma.post.findMany({
-      select: {
-        id: true,
-        authorId: true,
-        createdAt: true,
-        title: true,
-        content: true,
-        published: true,
-      }
-    });
-
-    await res.json(getPostList);
+    // const getPostList = await prisma.post.findMany({
+    //   select: {
+    //     id: true,
+    //     authorId: true,
+    //     createdAt: true,
+    //     title: true,
+    //     content: true,
+    //     published: true,
+    //   }
+    // });
+    //
+    // await res.json(getPostList);
   } catch (error: ApiError | any) {
     if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === 'P2002') {
       await res.status(400).json({

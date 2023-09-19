@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import { CreateUserForm } from '@auth';
+import { CreateUserForm } from '@app/old/auth';
 
 interface Data {
   code: number;
