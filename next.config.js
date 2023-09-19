@@ -10,5 +10,5 @@ const nextConfig = {
 
 module.exports = {
   nextConfig,
-  pageExtensions: ['**/*.jsx', '**/*.tsx', '**/*.js', '**/*.ts', '**/*.json', '**/*.md', '**/*.prisma'],
+  pageExtensions: ['jsx', 'tsx', 'js', 'ts', 'json', 'md', 'prisma'],
 };
