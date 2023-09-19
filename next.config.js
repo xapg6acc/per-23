@@ -8,4 +8,7 @@ const nextConfig = {
   reactStrictMode: false,
 };
 
-export default module.exports = nextConfig;
+export default module.exports = {
+  nextConfig,
+  pageExtensions: ['jsx', 'tsx', 'js', 'ts', 'json', 'md', 'prisma'],
+};
