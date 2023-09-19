@@ -1,14 +1,8 @@
 const { i18n } = require('./next-i18next.config');
 
-/**
- * @type {import('next').NextConfig}
- */
+/** @type {{i18n: {defaultLocale: string, locales: string[], useSuspense: boolean, ns, localeDetection: boolean}}} */
 const nextConfig = {
   i18n,
-  reactStrictMode: false,
 };
 
-module.exports = {
-  nextConfig,
-  pageExtensions: ['jsx', 'tsx', 'js', 'ts', 'json', 'md', 'prisma'],
-};
+module.exports = nextConfig;

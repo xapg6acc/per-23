@@ -52,10 +52,10 @@
   "inventory": "Inventario",
   "language": {
     "title": "Idioma",
-    "de": "Alemán",
+    "de": "Deutsch",
     "es": "Español",
-    "en": "Inglés",
-    "uk": "Ucraniano"
+    "en": "English",
+    "uk": "Українська"
   },
   "currency": {
     "title": "Moneda",

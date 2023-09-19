@@ -20,7 +20,7 @@ export const useApplication = () => {
   const currency = state?.currency as ApplicationState['currency'];
   const updateCurrency = useCallback(
     (value: Currency) => {
-      if (state?.currency) {
+      if (state) {
         setState(
           produce(state, draft => {
             draft.currency = value;
@@ -28,7 +28,7 @@ export const useApplication = () => {
         );
       }
     },
-    [state?.currency],
+    [state],
   );
   //endregion
 
@@ -93,7 +93,7 @@ export const useApplication = () => {
     };
   }, [state, currency]);
   const isInCurrentOrder = useMemo(
-    () => (product: Product) => state.order.find(item => item.id === product.id),
+    () => (product: Product) => state?.order.find(item => item.id === product.id),
     [order],
   );
   const updateContextOrder = useCallback(

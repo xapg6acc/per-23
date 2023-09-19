@@ -10,8 +10,10 @@ module.exports = {
     useSuspense: false,
   },
   react: {
+    reactStrictMode: false,
     transSupportBasicHtmlNodes: true,
     transKeepBasicHtmlNodesFor: ['b', 'br', 'strong', 'a', 'href', 'span'],
+    pageExtensions: ['jsx', 'tsx', 'js', 'ts', 'json', 'md', 'prisma'],
   },
   interpolation: {
     escapeValue: false, // not needed for react as it escapes by default

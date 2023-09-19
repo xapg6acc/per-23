@@ -13,7 +13,7 @@ export const ComingPage = () => {
   const { data = [], isLoading } = useGetProducts();
   const { currency, contextOrder } = useApplication();
   const { setSearchValue, searchValue: filter, includes } = useSearch();
-  const { data: ordersData = [], isLoading: isLoadingOrders } = useGetOrders();
+  const { data: ordersData = [] as Order[], isLoading: isLoadingOrders } = useGetOrders();
 
   const result: Order[] = useMemo(() => {
     return ordersData.map(item => {
@@ -30,8 +30,8 @@ export const ComingPage = () => {
 
       return {
         ...item,
-        order,
-        totalAmount,
+        order: order || [],
+        totalAmount: totalAmount || 0,
       };
     });
   }, [ordersData, data, currency]);
@@ -43,7 +43,7 @@ export const ComingPage = () => {
     [active],
   );
 
-  const ordersList: Order[] = [...result, contextOrder];
+  const ordersList = [...result, contextOrder] as Order[];
   const activeOrderContainer = ordersList.find(item => item?.id === active?.id);
 
   return (

@@ -14,10 +14,9 @@ export interface ComingListProps {
 export const ComingList = ({ orders, active, onClick, filter }: ComingListProps) => {
   const { includes } = useSearch();
 
-  console.log(orders);
   return (
     <Grid container spacing={2}>
-      {Object.values(orders).map(order => (
+      {orders.map(order => (
         <Grow unmountOnExit in={includes(order, filter)} key={order.id}>
           <Grid item xs={12}>
             <ComingCard filter={filter} active={active} order={order} onClick={onClick} count={order?.order?.length} />

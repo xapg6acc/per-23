@@ -33,12 +33,6 @@ export const ProductCard = ({
     content: <ProductCard variant="modal" product={product} sx={{ boxShadow: 0 }} />,
   });
 
-  const title = (
-    <Box sx={{ color: statusMap[product.isNew].color }} width={80}>
-      {statusMap[product.isNew].title}
-    </Box>
-  );
-
   const guarantee = {
     start: dayjs(product.guarantee.start).format(appConfig.format.slashes),
     end: dayjs(product.guarantee.end).format(appConfig.format.slashes),
@@ -57,7 +51,11 @@ export const ProductCard = ({
             {product.specification}
           </Typography>
         </Box>
-        {variant === 'detailed' && title}
+        {variant === 'detailed' && (
+          <Box sx={{ color: statusMap[product.isNew].color }} width={80}>
+            {statusMap[product.isNew].title}
+          </Box>
+        )}
         {variant === 'detailed' && (
           <Box mr={2} width={180}>
             <Typography sx={{ span: { color: 'gray', fontWeight: 600 } }}>
@@ -86,8 +84,8 @@ export const ProductCard = ({
                 <Typography
                   ml={1}
                   key={price.symbol}
-                  fontSize={smallest ? 10 : 14}
-                  color={smallest ? 'gray' : 'common.black'}
+                  fontSize={smallest ? 14 : 10}
+                  color={smallest ? 'common.black' : 'gray'}
                 >
                   <strong>{price.value}</strong> {price.symbol.replace('USD', '$')}
                 </Typography>
