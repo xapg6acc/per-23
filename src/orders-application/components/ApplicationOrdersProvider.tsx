@@ -1,7 +1,6 @@
 import deepEqual from 'fast-deep-equal';
 import { ReactNode, useCallback, useEffect, useState } from 'react';
 
-import { Order } from '../types';
 import { Currency, Language } from '../constants';
 import { applicationOrderStorage } from '../utils';
 import { ApplicationOrdersContext } from '../context';
@@ -14,7 +13,7 @@ export interface ApplicationOrdersProviderProps {
 const initialState: ApplicationState = {
   socket: 0,
   order: [],
-  language: Language.UA,
+  language: Language.EN,
   currency: Currency.UAH,
 };
 
