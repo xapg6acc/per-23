@@ -1,4 +1,6 @@
-export default function webhook(req, res) {
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+export default function webhook(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const data = req.body;
 
