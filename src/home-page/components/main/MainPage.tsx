@@ -96,7 +96,7 @@ export const MainPage = () => {
                     await push(item.to);
                   }
                 }}
-                sx={{ borderRadius: 5, overflow: 'hidden' }}
+                sx={{ borderRadius: 5, overflow: 'hidden', ':hover': { backgroundColor: 'rgba(220, 220, 220, 0.5)' } }}
               >
                 <Box
                   width={1}
