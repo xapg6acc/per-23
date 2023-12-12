@@ -10,12 +10,9 @@ import PsychologyIcon from '@mui/icons-material/Psychology';
 import EngineeringIcon from '@mui/icons-material/Engineering';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
 
+import { CodeWarsUser } from "../types/codeWars";
 import { CodeWarsOverall } from './code-wars-overall';
-import { CodeWarsOverall as CWOType } from '../types/codeWars';
-
-const camelCaseToSeparatedWords = (camelCase: string) => {
-  return camelCase.split(/(?=[A-Z])/).join(' ');
-};
+import { camelCaseToSeparatedWords } from '../helpers';
 
 enum MapElement {
   books = 'books',
@@ -44,7 +41,7 @@ const imagesMap: Record<MapElement, ReactNode> = {
 export interface ActionAreaCardProps {
   readonly title: string;
   readonly content?: ReactNode;
-  readonly item?: CWOType;
+  readonly item?: CodeWarsUser;
 }
 
 export const ActionAreaCard = ({ title, content, item }: ActionAreaCardProps) => {
@@ -63,7 +60,7 @@ export const ActionAreaCard = ({ title, content, item }: ActionAreaCardProps) =>
           </Typography>
           {imagesMap[title as MapElement]}
         </Box>
-        <CardMedia sx={{ mt: 2, 'div:nth-child(even)': { backgroundColor: 'grey.50' } }}>
+        <CardMedia sx={{ mt: 2, '.MuiBox-root:nth-child(even), .MuiGrid-container:nth-child(even)': { backgroundColor: 'grey.50' } }}>
           {item && <CodeWarsOverall item={item} />}
           {content}
         </CardMedia>

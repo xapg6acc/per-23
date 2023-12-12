@@ -7,29 +7,7 @@
     "Material UI",
     "Next JS"
   ],
-  "position": "Frontend Developer",
-  "experience": {
-    "type": "Fitness application",
-    "duration": "July 2022 - present (private repository)",
-    "technologies": [
-      "TypeScript",
-      "JavaScript",
-      "React",
-      "Material UI (v5, some features using v4 + date pickers)",
-      "NextJS",
-      "formik",
-      "dayJs",
-      "next-i18next (namespaces, plurals)",
-      "es-lint",
-      "prettier",
-      "immer",
-      "yup",
-      "axios",
-      "@tanstack/react-query",
-      "couple of carousel/slider-s (react-spring, slick-carousel, react-slick, slick-slider)",
-      "react-aria (useMeter)"
-    ]
-  },
+  "position": "Frontend Engineer (Developer)",
   "contact": {
     "name": "Ivan Boiko",
     "phone": "+38 063 399 72 51",
@@ -53,7 +31,6 @@
     "Fetch, REST API, Web sockets, SQL, axios, react-query",
     "Photoshop, Figma",
     "Git/Github, VS Code, WebStorm, Chrome Developer Tools (incl. React), NPM, Webpack, Brackets",
-    "Algorithms: Solved 36 katas on CodeWars",
     "Basic OOP understanding",
     "English: intermediate"
   ],

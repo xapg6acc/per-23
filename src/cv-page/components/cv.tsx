@@ -1,16 +1,15 @@
-// import produce from 'immer';
 import Masonry from '@mui/lab/Masonry';
 import { useRouter } from 'next/router';
-import { Backdrop, Box, Button, CircularProgress, Theme } from '@mui/material';
-// import { QueryClient } from '@tanstack/react-query';
+import { Backdrop, Box, Button, CircularProgress } from '@mui/material';
 
 import { ActionAreaList } from './area-list';
 import { ActionAreaCard } from './area-card';
 import { useResumeData, useGetCodeWarsData } from '../hooks/query';
 
+// todo: npm install react-pdf
+
 export const CvPage = () => {
   const { back } = useRouter();
-  // const queryClient = new QueryClient();
 
   const { data, isLoading } = useResumeData();
   const { data: codeWarsData, isLoading: isCodeWarsLoading } = useGetCodeWarsData();
@@ -25,12 +24,17 @@ export const CvPage = () => {
         </Backdrop>
       ) : (
         <>
-          <Button variant="outlined" onClick={back}>
-            back
-          </Button>
+          <Box display="flex" gap={2}>
+            <Button fullWidth variant="outlined" onClick={back}>
+              back
+            </Button>
+            <Button disabled variant="outlined" onClick={back} sx={{ minWidth: 'fit-content' }}>
+              download cv
+            </Button>
+          </Box>
           <Box mt={4} mr={-4}>
             <Masonry columns={{ xs: 1, md: 2, lg: 3 }} spacing={4}>
-              <ActionAreaCard title="codeWars" item={codeWarsData && codeWarsData.ranks.overall} />
+              <ActionAreaCard title="codeWars" item={codeWarsData && codeWarsData} />
               <ActionAreaList data={data} />
             </Masonry>
           </Box>

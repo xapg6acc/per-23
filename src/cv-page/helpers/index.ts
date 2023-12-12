@@ -1,0 +1,1 @@
+export { camelCaseToSeparatedWords } from './camelCaseToSeparatedWords';
