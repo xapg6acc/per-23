@@ -41,7 +41,7 @@ const imagesMap: Record<MapElement, ReactNode> = {
 export interface ActionAreaCardProps {
   readonly title: string;
   readonly content?: ReactNode;
-  readonly item?: CodeWarsUser;
+  readonly item?: Partial<CodeWarsUser>;
 }
 
 export const ActionAreaCard = ({ title, content, item }: ActionAreaCardProps) => {

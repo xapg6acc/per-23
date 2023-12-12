@@ -1,6 +1,6 @@
 import { Box, Grid } from '@mui/material';
 
-import { CodeWarsUser } from '../types/codeWars';
+import { CodeWarsOverallProps, CodeWarsRanks } from '../types/codeWars';
 
 enum MapEnum {
   blue = 'blue',
@@ -14,12 +14,12 @@ const colorMap: Record<MapEnum, string> = {
   yellow: '#ecb613',
 };
 
-const codeWarsInfo = item => {
-  return Object.entries(item).reduce((acc, [key, value]) => {
+const codeWarsInfo = (item: CodeWarsRanks | undefined) => {
+  return Object.entries(item || {}).reduce((acc, [key, value]) => {
     if (key === 'languages') {
-      const languagesInfo = Object.entries(value).map(([languageKey, languageValue]) => ({
+      const languagesInfo: Record<any, any>[] = Object.entries(value).map(([languageKey, languageValue]) => ({
         key: languageKey,
-        ...languageValue,
+        ...(languageValue as object),
       }));
 
       acc.push(...languagesInfo);
@@ -28,10 +28,10 @@ const codeWarsInfo = item => {
     }
 
     return acc;
-  }, []);
+  }, [] as Record<any, any>[]);
 };
 
-export const CodeWarsOverall = ({ item }: Partial<CodeWarsUser>) => {
+export const CodeWarsOverall = ({ item }: CodeWarsOverallProps) => {
   return (
     <>
       {codeWarsInfo(item.ranks).map(rank => (
@@ -78,7 +78,7 @@ export const CodeWarsOverall = ({ item }: Partial<CodeWarsUser>) => {
         </Grid>
         <Grid item xs={4}>
           <b>score: </b>
-          {item.codeChallenges.totalCompleted}
+          {item?.codeChallenges?.totalCompleted || 0}
         </Grid>
         <Grid item xs={4} sx={{ span: { float: 'right', textDecoration: 'line-through', mr: 1 } }}>
           <span>solved</span>

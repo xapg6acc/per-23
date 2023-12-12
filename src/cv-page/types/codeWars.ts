@@ -16,7 +16,7 @@ interface CodeWarsLanguages {
   [language: string]: CodeWarsLanguage;
 }
 
-interface CodeWarsRanks {
+export interface CodeWarsRanks {
   overall: CodeWarsOverall;
   languages: CodeWarsLanguages[];
 }
@@ -39,5 +39,5 @@ export interface CodeWarsUser {
 }
 
 export interface CodeWarsOverallProps {
-  readonly item: CodeWarsOverall;
+  readonly item: Partial<CodeWarsUser>;
 }
