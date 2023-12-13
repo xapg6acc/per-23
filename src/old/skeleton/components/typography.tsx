@@ -7,5 +7,5 @@ export interface MuiTypographyProps extends TypographyProps {
 }
 
 export const Typography = ({ isLoading = false, children, ...props }: MuiTypographyProps) => {
-  return <MuiTypography {...props} width={1}>{isLoading ? <Skeleton animation="wave" width="100%" /> : children}</MuiTypography>;
+  return <MuiTypography {...props} minWidth={1}>{isLoading ? <Skeleton animation="wave" width="100%" /> : children}</MuiTypography>;
 };

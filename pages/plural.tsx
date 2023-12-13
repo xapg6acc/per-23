@@ -1,9 +1,12 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useTranslation, Trans } from 'next-i18next';
 import { GetStaticProps, NextPage } from 'next';
-import { Grid, Typography, Box } from '@mui/material';
+import { Box, Button, Divider, Grid, Paper } from '@mui/material';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+import { Typography } from '@app/old/skeleton/';
 
 const list = [
   'time.dayCount',
@@ -22,6 +25,7 @@ const list = [
 ];
 
 const PluralPage: NextPage = () => {
+  const { back } = useRouter();
   const { t } = useTranslation('plural');
   const [loading, setIsLoading] = useState<boolean>(true);
 
@@ -35,18 +39,28 @@ const PluralPage: NextPage = () => {
       {/*  <title>plural</title>*/}
       {/*  <link rel="icon" href="/favicon.ico" />*/}
       {/*</Head>*/}
-      <main>
-        <Grid container spacing={5}>
-          {list.map(item => (
-            <Grid item key={item}>
-              <Typography fontWeight={700}>{item}</Typography>
-              {[1, 2, 5].map(value => (
-                <Typography key={value}>{t(item, { count: value })}</Typography>
-              ))}
-            </Grid>
-          ))}
-        </Grid>
-      </main>
+      <Box minHeight="100vh" maxWidth={900} display="flex" justifyContent="center" flexDirection="column" mx="auto">
+        <Button fullWidth variant="outlined" onClick={back}>
+          back
+        </Button>
+        <Paper sx={{ p: 2, mt: 2 }}>
+          <Grid container spacing={5}>
+            {list.map(item => (
+              <Grid item key={item} xs={3}>
+                <Typography isLoading={loading} fontWeight={700}>
+                  {item}
+                </Typography>
+                <Divider />
+                {[1, 2, 5].map(value => (
+                  <Typography isLoading={loading} key={value}>
+                    {t(item, { count: value })}
+                  </Typography>
+                ))}
+              </Grid>
+            ))}
+          </Grid>
+        </Paper>
+      </Box>
     </>
   );
 };

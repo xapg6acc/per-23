@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import { QueryProvider } from '@app/old/api';
+import { Home } from '@app/ui/button/components/Home';
 import { ApplicationOrdersProvider } from '@app/orders-application/components/ApplicationOrdersProvider';
 import { ApplicationProvider as PhoneCatalogApplicationProvider } from '@app/phone-catalog/components/ApplicationProvider';
 
@@ -24,6 +25,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             <ApplicationOrdersProvider>
               <CssBaseline />
               <Component {...pageProps} />
+              <Home />
             </ApplicationOrdersProvider>
           </PhoneCatalogApplicationProvider>
         </QueryProvider>

@@ -1,23 +1,25 @@
+import { useCallback } from 'react';
 import { useRouter } from 'next/router';
-import { StaticImageData } from 'next/image';
-import { Box, Grid, Button, ButtonBase, Tooltip, Typography } from '@mui/material';
+import { Box, Grid, Button } from '@mui/material';
 
+import { MainItem } from '../../types';
 import { PageLayout } from '../layout/page';
+import { TooltipButton } from '../TooltipButton';
+
+import i18n from '../../images/i18n.jpeg';
 import uaFlagImage from '../../images/ua-flag.png';
 import dzenCodeImage from '../../images/dzen-code.png';
 import reactTsImage from '../../images/react-ts.png';
 import phoneCatalogImage from '../../images/phone-catalog-banner.png';
 
-interface MainItem {
-  readonly to?: string;
-  readonly href?: string;
-  readonly title: string;
-  readonly image: StaticImageData;
-  readonly target?: string;
-  readonly tooltip: string;
-}
-
 const mainList: MainItem[] = [
+  {
+    // target: '_self',
+    image: i18n,
+    to: '/plural',
+    title: 'Plurals',
+    tooltip: 'Go to Plurals page',
+  },
   {
     // target: '_self',
     image: dzenCodeImage,
@@ -80,65 +82,20 @@ const mainList: MainItem[] = [
 export const MainPage = () => {
   const { push } = useRouter();
 
+  const handleClick = useCallback(async (to: string) => {
+    await push(to);
+
+    scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   return (
     <PageLayout>
       <Grid display="grid" gridTemplateColumns="repeat(2, 1fr)" gap={5}>
         {mainList.map(item => (
           <Grid key={item.title} gridColumn="span 1" p={4}>
-            <Tooltip title={item.tooltip}>
-              <ButtonBase
-                // href={item?.href}
-                // target={item?.target}
-                onClick={async () => {
-                  console.log(item.title.length);
-                  if (item?.to) {
-                    scrollTo({ top: 0, behavior: 'smooth' });
-                    await push(item.to);
-                  }
-                }}
-                sx={{ borderRadius: 5, overflow: 'hidden', ':hover': { backgroundColor: 'rgba(220, 220, 220, 0.5)' } }}
-              >
-                <Box
-                  width={1}
-                  display="grid"
-                  fontSize="5rem"
-                  fontWeight={700}
-                  textAlign="center"
-                  sx={{
-                    span: {
-                      color: 'transparent',
-                      backgroundClip: 'content-box',
-                    },
-                    ':hover > span': {
-                      backgroundClip: 'text',
-                    },
-                  }}
-                >
-                  <Box
-                    component="span"
-                    sx={{
-                      backgroundImage: `url(${item.image.src})`,
-                      backgroundSize: 'cover',
-                    }}
-                  >
-                    {item.title}
-                  </Box>
-                </Box>
-              </ButtonBase>
-            </Tooltip>
+            <TooltipButton onClick={() => handleClick(String(item?.to))} item={item} />
             <Box mt={1} display="flex" justifyContent="flex-end">
-              <Button
-                // href={item?.href}
-                // target={item?.target}
-                onClick={async () => {
-                  if (item?.to) {
-                    scrollTo({ top: 0, behavior: 'smooth' });
-                    await push(item.to);
-                  }
-                }}
-              >
-                {item.title}
-              </Button>
+              <Button onClick={() => handleClick(String(item?.to))}>{item.title}</Button>
             </Box>
           </Grid>
         ))}
