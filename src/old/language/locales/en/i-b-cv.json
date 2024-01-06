@@ -1,12 +1,8 @@
 {
-  "additionalEducation": [
-    "FreeCodeCamp (HTML, CSS, JavaScript, Regex, React, SQL)",
-    "JavaScript",
-    "JS, HTML, CSS",
-    "React",
-    "Material UI",
-    "Next JS"
-  ],
+  "freeCodeCamp": {
+    "certificate": "https://freecodecamp.org/certification/wallhaven/javascript-algorithms-and-data-structures",
+    "": ["HTML", "CSS", "JavaScript", "Regex", "React", "SQL"]
+  },
   "position": "Frontend Engineer (Developer)",
   "contact": {
     "name": "Ivan Boiko",
@@ -36,12 +32,13 @@
   ],
   "achievements": [
     "Multiple half-marathon Runner (21km)",
-    "Passed all the tracks of Bukovel on a snowboard",
+    "Passed all the tracks of Bukovel on a snowboard :)",
     "Critical thinking"
   ],
   "books": [
     "Steve Krug - Don't make me think",
     "Peter Yaworski - Web hacking basics",
+    "Aditya Bhargava - Grokking Algorithms: An Illustrated Guide for Programmers and Other Curious People",
     "Blake Masters and Peter Thiel - Zero to One"
   ]
 }

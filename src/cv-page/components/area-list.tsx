@@ -37,7 +37,7 @@ export const ActionAreaList = ({ data }: ActionAreaListProps) => {
                 }
 
                 return (
-                  <Box key={value}>
+                  <Box key={value} sx={{ 'a:visited': { color: 'primary.main' } }}>
                     <strong>{value}: </strong>
                     {items.includes('https') ? (
                       <a href={items} target="_blank">
