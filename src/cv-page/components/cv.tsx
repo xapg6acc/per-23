@@ -1,12 +1,12 @@
 import Masonry from '@mui/lab/Masonry';
 import { useRouter } from 'next/router';
+import { PDFDownloadLink } from '@react-pdf/renderer';
 import { Backdrop, Box, Button, CircularProgress } from '@mui/material';
 
+import { CvPdf } from './cv-pdf';
 import { ActionAreaList } from './area-list';
 import { ActionAreaCard } from './area-card';
 import { useResumeData, useGetCodeWarsData } from '../hooks/query';
-
-// todo: npm install react-pdf
 
 export const CvPage = () => {
   const { back } = useRouter();
@@ -28,9 +28,13 @@ export const CvPage = () => {
             <Button fullWidth variant="outlined" onClick={back}>
               back
             </Button>
-            <Button disabled variant="outlined" onClick={back} sx={{ minWidth: 'fit-content' }}>
-              download cv
-            </Button>
+            <PDFDownloadLink document={<CvPdf data={data} codeWarsData={codeWarsData} />} fileName="Ivan_Boiko_CV.pdf">
+              {({ loading }) => (
+                <Button disabled={loading} variant="outlined" sx={{ whiteSpace: 'nowrap' }}>
+                  {loading ? 'preparing' : 'download'} cv
+                </Button>
+              )}
+            </PDFDownloadLink>
           </Box>
           <Box mt={4} mr={-4}>
             <Masonry columns={{ xs: 1, md: 2, lg: 3 }} spacing={4}>

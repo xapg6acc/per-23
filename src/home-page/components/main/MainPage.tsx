@@ -15,10 +15,24 @@ import phoneCatalogImage from '../../images/phone-catalog-banner.png';
 const mainList: MainItem[] = [
   {
     // target: '_self',
+    image: reactTsImage,
+    to: '/resume',
+    title: 'Curriculum Vitae',
+    tooltip: 'Go to CV',
+  },
+  {
+    // target: '_self',
     image: i18n,
     to: '/plural',
     title: 'Plurals',
     tooltip: 'Go to Plurals page',
+  },
+  {
+    // target: '_self',
+    image: phoneCatalogImage,
+    to: '/phone-catalog',
+    title: 'Phone Catalog',
+    tooltip: 'Go to react phone catalog page',
   },
   {
     // target: '_self',
@@ -29,24 +43,10 @@ const mainList: MainItem[] = [
   },
   {
     // target: '_self',
-    image: reactTsImage,
-    to: '/resume',
-    title: 'Curriculum Vitae',
-    tooltip: 'Go to CV',
-  },
-  {
-    // target: '_self',
     image: uaFlagImage,
     to: '/sign-in',
     title: 'Sign In/Up Page',
     tooltip: 'Go to create user page',
-  },
-  {
-    // target: '_self',
-    image: phoneCatalogImage,
-    to: '/phone-catalog',
-    title: 'Phone Catalog',
-    tooltip: 'Go to react phone catalog page',
   },
   {
     // target: '_self',

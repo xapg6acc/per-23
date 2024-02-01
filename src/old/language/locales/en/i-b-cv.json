@@ -1,7 +1,7 @@
 {
   "freeCodeCamp": {
-    "certificate": "https://freecodecamp.org/certification/wallhaven/javascript-algorithms-and-data-structures",
-    "": ["HTML", "CSS", "JavaScript", "Regex", "React", "SQL"]
+    "": ["HTML", "CSS", "JavaScript", "Regex", "React", "SQL"],
+    "certificate(JS)": "https://freecodecamp.org/certification/wallhaven/javascript-algorithms-and-data-structures"
   },
   "position": "Frontend Engineer (Developer)",
   "contact": {
@@ -14,6 +14,7 @@
     "email": "ivan.boiko.code@gmail.com"
   },
   "relevant": {
+    "experience": "I have been coding since January 2022",
     "availability": "Ready to work remotely",
     "coworking": "Ready to work in co-working",
     "relocate": "Ready to relocate",

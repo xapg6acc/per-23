@@ -39,6 +39,7 @@ export interface RelevantInfo {
   coworking: boolean;
   laptop: boolean;
   availability: string;
+  experience: string;
 }
 
 // todo

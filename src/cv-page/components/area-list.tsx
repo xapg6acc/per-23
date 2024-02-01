@@ -3,6 +3,7 @@ import { Box } from '@mui/material';
 
 import { ResumeData } from '../types';
 import { ActionAreaCard } from './area-card';
+import { Trans } from 'next-i18next';
 
 export interface ActionAreaListProps {
   readonly data?: ResumeData;
@@ -16,7 +17,9 @@ export const ActionAreaList = ({ data }: ActionAreaListProps) => {
           const content = (
             <Fragment key={key}>
               {values.map(value => (
-                <Box key={value}>{value}</Box>
+                <Box key={value}>
+                  <Trans>{value}</Trans>
+                </Box>
               ))}
             </Fragment>
           );
@@ -37,11 +40,19 @@ export const ActionAreaList = ({ data }: ActionAreaListProps) => {
                 }
 
                 return (
-                  <Box key={value} sx={{ 'a:visited': { color: 'primary.main' } }}>
+                  <Box key={value} sx={{ 'a, a:visited': { color: 'primary.main' } }}>
                     <strong>{value}: </strong>
                     {items.includes('https') ? (
                       <a href={items} target="_blank">
                         {value} link
+                      </a>
+                    ) : items.includes('+') ? (
+                      <a href={`tel:${items}`} target="_blank">
+                        {items}
+                      </a>
+                    ) : items.includes('@') ? (
+                      <a href={`mailto:${items}`} target="_blank">
+                        {items}
                       </a>
                     ) : (
                       items

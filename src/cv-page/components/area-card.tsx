@@ -57,9 +57,13 @@ export const ActionAreaCard = ({ title, content, item }: ActionAreaCardProps) =>
           </Typography>
           {imagesMap[title as MapElement]}
         </Box>
-        <Divider sx={{ color: 'grey.300', '-webkit-user-select': 'none' }}>~</Divider>
+        <Divider sx={{ color: 'grey.300', userSelect: 'none' }}>~</Divider>
         <CardMedia
-          sx={{ '.MuiBox-root:nth-child(even), .MuiGrid-container:nth-child(even)': { backgroundColor: 'grey.50' } }}
+          sx={{
+            '.MuiBox-root:nth-of-type(even), .MuiGrid-container:nth-of-type(even)': {
+              backgroundColor: 'grey.50',
+            },
+          }}
         >
           {item && <CodeWarsOverall item={item} />}
           {content}
