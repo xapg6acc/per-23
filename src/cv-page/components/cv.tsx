@@ -17,7 +17,7 @@ export const CvPage = () => {
   const loading = isLoading || isCodeWarsLoading;
 
   return (
-    <Box minHeight="100vh" display="flex" flexDirection="column" maxWidth={1200} p={10} mx="auto">
+    <Box minHeight="100vh" display="flex" flexDirection="column" maxWidth={1200} p={{ xs: 2, md: 10 }} mx="auto">
       {loading ? (
         <Backdrop open={loading} style={{ zIndex: 99999, color: 'lightgray' }}>
           <CircularProgress color="inherit" />
