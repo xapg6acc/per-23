@@ -44,7 +44,7 @@ const mainList: MainItem[] = [
   {
     // target: '_self',
     image: uaFlagImage,
-    to: '/sign-in',
+    to: '/authorize',
     title: 'Sign In/Up Page',
     tooltip: 'Go to create user page',
   },
@@ -78,12 +78,11 @@ const mainList: MainItem[] = [
   },
 ];
 
-// todo: replace grid with masonry
 export const MainPage = () => {
   const { push } = useRouter();
 
-  const handleClick = useCallback(async (to: string) => {
-    await push(to);
+  const handleClick = useCallback(async (to?: string) => {
+    await push(to ?? '/');
 
     scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
@@ -93,9 +92,9 @@ export const MainPage = () => {
       <Grid display="grid" gridTemplateColumns="repeat(2, 1fr)" gap={5}>
         {mainList.map(item => (
           <Grid key={item.title} gridColumn="span 1" p={4}>
-            <TooltipButton onClick={() => handleClick(String(item?.to))} item={item} />
+            <TooltipButton onClick={() => handleClick(item?.to)} item={item} />
             <Box mt={1} display="flex" justifyContent="flex-end">
-              <Button onClick={() => handleClick(String(item?.to))}>{item.title}</Button>
+              <Button onClick={() => handleClick(item?.to)}>{item.title}</Button>
             </Box>
           </Grid>
         ))}

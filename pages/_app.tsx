@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import { QueryProvider } from '@app/old/api';
-import { Home } from '@app/ui/button/components/Home';
+import { Auth0ProviderWithHistory } from "@app/auth/components/Auth0ProviderWithHistory";
 import { ApplicationOrdersProvider } from '@app/orders-application/components/ApplicationOrdersProvider';
 import { ApplicationProvider as PhoneCatalogApplicationProvider } from '@app/phone-catalog/components/ApplicationProvider';
 
@@ -19,17 +19,18 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta property="og:type" content="website" />
       </Head>
-      <SnackbarProvider maxSnack={5}>
-        <QueryProvider>
-          <PhoneCatalogApplicationProvider>
-            <ApplicationOrdersProvider>
-              <CssBaseline />
-              <Component {...pageProps} />
-              <Home />
-            </ApplicationOrdersProvider>
-          </PhoneCatalogApplicationProvider>
-        </QueryProvider>
-      </SnackbarProvider>
+      <Auth0ProviderWithHistory>
+        <SnackbarProvider maxSnack={5}>
+          <QueryProvider>
+            <PhoneCatalogApplicationProvider>
+              <ApplicationOrdersProvider>
+                <CssBaseline />
+                <Component {...pageProps} />
+              </ApplicationOrdersProvider>
+            </PhoneCatalogApplicationProvider>
+          </QueryProvider>
+        </SnackbarProvider>
+      </Auth0ProviderWithHistory>
     </>
   );
 };
