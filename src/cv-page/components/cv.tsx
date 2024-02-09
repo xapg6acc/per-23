@@ -9,7 +9,7 @@ import { ActionAreaCard } from './area-card';
 import { useResumeData, useGetCodeWarsData } from '../hooks/query';
 
 export const CvPage = () => {
-  const { back } = useRouter();
+  const { push } = useRouter();
 
   const { data, isLoading } = useResumeData();
   const { data: codeWarsData, isLoading: isCodeWarsLoading } = useGetCodeWarsData();
@@ -25,7 +25,7 @@ export const CvPage = () => {
       ) : (
         <>
           <Box display="flex" gap={2}>
-            <Button fullWidth variant="outlined" onClick={back}>
+            <Button fullWidth variant="outlined" onClick={() => push('/')}>
               back
             </Button>
             <PDFDownloadLink document={<CvPdf data={data} codeWarsData={codeWarsData} />} fileName="Ivan_Boiko_CV.pdf">

@@ -25,7 +25,7 @@ const list = [
 ];
 
 const PluralPage: NextPage = () => {
-  const { back } = useRouter();
+  const { push } = useRouter();
   const { t } = useTranslation('plural');
   const [loading, setIsLoading] = useState<boolean>(true);
 
@@ -40,7 +40,7 @@ const PluralPage: NextPage = () => {
       {/*  <link rel="icon" href="/favicon.ico" />*/}
       {/*</Head>*/}
       <Box minHeight="100vh" maxWidth={900} display="flex" justifyContent="center" flexDirection="column" mx="auto">
-        <Button fullWidth variant="outlined" onClick={back}>
+        <Button fullWidth variant="outlined" onClick={() => push('/')}>
           back
         </Button>
         <Paper sx={{ p: 2, mt: 2 }}>

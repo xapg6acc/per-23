@@ -17,7 +17,7 @@ const initialValues = {
 };
 
 export const ForgotPassword = () => {
-  const { push, back } = useRouter();
+  const { push } = useRouter();
   const { t } = useTranslation();
   const { snack } = useSnack();
 
@@ -38,7 +38,7 @@ export const ForgotPassword = () => {
                   </Grid>
                   <Grid item xs={12}>
                     <Box display="flex" justifyContent="space-between" gap={2}>
-                      <Button fullWidth variant="outlined" onClick={back}>
+                      <Button fullWidth variant="outlined" onClick={() => push('/')}>
                         {t('button:back')}
                       </Button>
                       <Button fullWidth type="submit" variant="contained">
