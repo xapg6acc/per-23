@@ -67,7 +67,7 @@ export const Ticker = ({
 
   const isVisible = useTicker({
     ref: marqueeContainer,
-    rootMargin: '10px',
+    margin: '10px',
     threshold: [threshold],
     repeat: true,
   });

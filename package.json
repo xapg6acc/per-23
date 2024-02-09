@@ -52,6 +52,7 @@
     "react-dom": "18.2.0",
     "react-modal-hook": "^3.0.2",
     "react-slick": "^0.29.0",
+    "sharp": "^0.33.2",
     "slick-carousel": "^1.8.1",
     "snakecase-keys": "^5.4.5",
     "socket.io": "^4.7.2",

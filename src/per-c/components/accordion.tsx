@@ -2,18 +2,18 @@ import Image from 'next/image';
 import { SyntheticEvent, useState, useEffect, useCallback } from 'react';
 import { Accordion, AccordionDetails, AccordionSummary, Box, Grid, Typography } from '@mui/material';
 
+import { Svg } from '@app/ui/svg';
+
 import { itemsMap } from '../constants';
 
 const list = [1, 2, 3, 4, 5, 6];
 
 export const CAccordion = () => {
-  const [expanded, setExpanded] = useState<number | false>(1);
+  const [expanded, setExpanded] = useState<number>(1);
 
   const handleChange = useCallback(
-    (panel: string) => (event: SyntheticEvent, newExpanded: boolean) => {
-      if (newExpanded !== expanded) {
-        setExpanded(panel);
-      }
+    (panel: number) => (event: SyntheticEvent, newExpanded: boolean) => {
+      setExpanded(newExpanded ? panel : 1);
     },
     [],
   );
@@ -47,7 +47,7 @@ export const CAccordion = () => {
               }}
             >
               <AccordionSummary
-                expandIcon={itemsMap[item].icon}
+                expandIcon={<Svg Icon={itemsMap[item].icon} size={24} />}
                 id={`${item}d-header`}
                 aria-controls={`${item}d-content`}
                 sx={{

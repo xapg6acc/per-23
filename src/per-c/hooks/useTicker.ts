@@ -11,7 +11,7 @@ export const useTicker = ({ ref, margin = '10px', threshold = 0.4, repeat = fals
   const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
-    const callback = entries => {
+    const callback = (entries: any) => {
       const [entry] = entries;
 
       setIntersecting(entry.isIntersecting);
@@ -21,9 +21,9 @@ export const useTicker = ({ ref, margin = '10px', threshold = 0.4, repeat = fals
       }
     };
 
-    let observerRefValue = null;
+    let observerRefValue: any = null;
 
-    const observer = new IntersectionObserver(callback, { margin, threshold });
+    const observer = new IntersectionObserver(callback, { threshold });
 
     if (ref.current) {
       observer.observe(ref.current);
