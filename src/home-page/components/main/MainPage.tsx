@@ -11,6 +11,7 @@ import uaFlagImage from '../../images/ua-flag.png';
 import dzenCodeImage from '../../images/dzen-code.png';
 import reactTsImage from '../../images/react-ts.png';
 import phoneCatalogImage from '../../images/phone-catalog-banner.png';
+import draftImage from '../../images/Rioters-New-York-Tribune-offices-Republican-Draft-1863.webp';
 
 const mainList: MainItem[] = [
   {
@@ -40,6 +41,13 @@ const mainList: MainItem[] = [
     to: '/orders-application/coming',
     title: 'Orders & Products',
     tooltip: 'Go to Orders & Products page',
+  },
+  {
+    // target: '_self',
+    image: draftImage,
+    to: '/draft',
+    title: 'Draft Page',
+    tooltip: 'Go to draft page',
   },
   {
     // target: '_self',
