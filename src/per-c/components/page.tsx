@@ -1,13 +1,45 @@
+import { useMemo } from 'react';
 import { useRouter } from 'next/router';
-import { Box, Button, Grid } from '@mui/material';
+import { Backdrop, Box, Button, CircularProgress } from '@mui/material';
 
 import { Ticker } from './ticker';
-import { CAccordion } from '@app/per-c/components/accordion';
-
-const tickerList = [1, 2, 3, 4, 5, 6, 7];
+import { CAccordion } from './accordion';
+import { formatCurrency } from '../helpers';
+import { Currency } from '../types/currency';
+import { MonoCurrency } from './mono-currency';
+import { currency } from '../constants/currency';
+import { useGetMonoCurrency } from '../hooks/query';
 
 export const PerCPage = () => {
   const { push } = useRouter();
+
+  const { data = [], isLoading } = useGetMonoCurrency();
+
+  const list: Partial<Currency>[] = useMemo(
+    () =>
+      data.reduce((acc, item: Currency) => {
+        const isUah = item?.currencyCodeA === 980 || item?.currencyCodeB === 980;
+
+        if (item?.rateSell || item?.rateBuy) {
+          if (isUah) {
+            acc.push({
+              title: currency[item.currencyCodeA],
+              rateSell: formatCurrency(item.rateSell),
+              rateBuy: formatCurrency(item.rateBuy),
+            });
+          } else {
+            acc.push({
+              title: `${currency[item.currencyCodeB]} to ${currency[item.currencyCodeA]}`,
+              rateSell: formatCurrency(item.rateSell, currency[item.currencyCodeB]),
+              rateBuy: formatCurrency(item.rateBuy, currency[item.currencyCodeB]),
+            });
+          }
+        }
+
+        return acc;
+      }, [] as Partial<Currency>[]),
+    [data],
+  );
 
   return (
     <Box display="flex" flexDirection="column" minHeight="100vh">
@@ -16,24 +48,17 @@ export const PerCPage = () => {
           back
         </Button>
       </Box>
-      <Ticker direction="right">
-        {tickerList.map((item, index) => (
-          <Box
-            key={item}
-            width={250}
-            bgcolor={index === 0 ? 'gray' : 'black'}
-            borderRadius={5}
-            height={200}
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            color="common.white"
-            fontSize={40}
-          >
-            {item}
-          </Box>
-        ))}
-      </Ticker>
+      {isLoading ? (
+        <Backdrop open={isLoading} style={{ zIndex: 99999, color: 'lightgray' }}>
+          <CircularProgress color="inherit" />
+        </Backdrop>
+      ) : (
+        <Ticker direction="right">
+          {list.map(item => (
+            <MonoCurrency key={item.title} item={item} />
+          ))}
+        </Ticker>
+      )}
       <Box mt="auto" bgcolor="lightgray" borderRadius={1}>
         <CAccordion />
       </Box>
