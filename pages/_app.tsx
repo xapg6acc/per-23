@@ -6,7 +6,6 @@ import { appWithTranslation } from 'next-i18next';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import '@app/per-c/ticker.css';
 import { QueryProvider } from '@app/old/api';
 import { Auth0ProviderWithHistory } from "@app/auth/components/Auth0ProviderWithHistory";
 import { ApplicationOrdersProvider } from '@app/orders-application/components/ApplicationOrdersProvider';
