@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Typography as MuiTypography, TypographyProps, Skeleton } from '@mui/material';
+import { Collapse, Typography as MuiTypography, TypographyProps, Skeleton } from '@mui/material';
 
 export interface MuiTypographyProps extends TypographyProps {
   readonly isLoading?: boolean;
@@ -7,5 +7,14 @@ export interface MuiTypographyProps extends TypographyProps {
 }
 
 export const Typography = ({ isLoading = false, children, ...props }: MuiTypographyProps) => {
-  return <MuiTypography {...props} minWidth={1}>{isLoading ? <Skeleton animation="wave" width="100%" /> : children}</MuiTypography>;
+  return (
+    <MuiTypography {...props} width={1} display="inline-flex" sx={{ '*': { minWidth: 1 } }}>
+      <Collapse unmountOnExit in={isLoading} orientation="horizontal" sx={{ width: 1 }}>
+        <Skeleton animation="wave" width="100%" />
+      </Collapse>
+      <Collapse mountOnEnter in={!isLoading} orientation="horizontal">
+        {children}
+      </Collapse>
+    </MuiTypography>
+  );
 };

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useState } from 'react';
-import { Box } from '@mui/material';
+import { Box, Divider } from '@mui/material';
 
 import { Typography } from '@app/old/skeleton';
 
@@ -11,12 +11,12 @@ export interface MonoCurrencyProps {
   readonly item: Partial<Currency>;
 }
 
+const time = [{ key: 'first', value: 1000 }, { key: 'second', value: 1500 }, { key: 'third', value: 2000 }];
+
 export const MonoCurrency = ({ item }: MonoCurrencyProps) => {
   const [loading, setIsLoading] = useState<Record<string, boolean>>({ first: true, second: true, third: true });
 
-  setTimeout(() => setIsLoading(s => ({ ...s, first: false })), 1500);
-  setTimeout(() => setIsLoading(s => ({ ...s, second: false })), 2000);
-  setTimeout(() => setIsLoading(s => ({ ...s, third: false })), 2500);
+  time.map(item => setTimeout(() => setIsLoading(s => ({ ...s, [item.key]: false })), item.value));
 
   return (
     <Box
@@ -31,6 +31,7 @@ export const MonoCurrency = ({ item }: MonoCurrencyProps) => {
     >
       <Image fill src={cat.src} alt="cat" style={{ bottom: 0, right: 0 }} />
       <Typography isLoading={loading.first}>{item.title}</Typography>
+      <Divider />
       <Box width={0.5}>
         <Typography isLoading={loading.second} textTransform="lowercase">
           buy: {item.rateBuy}
